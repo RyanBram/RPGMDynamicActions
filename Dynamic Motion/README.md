@@ -1,4 +1,4 @@
-#DynamicMotion User Manual
+# DynamicMotion User Manual
 It is a plug-in that freely controls the battle motion when executing the skill.
 
 You can move the battler and perform motions at any time.
