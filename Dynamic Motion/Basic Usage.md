@@ -10,7 +10,8 @@ You can copy and paste as it is, so feel free to use it.
 ### Motion
 
 Perform the motion. Please refer to the plug-in parameter list for what kind of motion there is.
-As an example, write the following in the memo field of the skill (or item). * Please note the presence or absence of "/" at the end.
+As an example, write the following in the note tag of the skill (or item).
+* Please note the presence or absence of "/" at the end.
 ```
 <D-Motion>
 motion = thrust // 突き
