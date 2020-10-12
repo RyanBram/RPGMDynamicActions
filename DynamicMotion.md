@@ -42,15 +42,15 @@ NRP_DynamicReadTxt.js
 
 # Change log
 
-2020/10/10 (ver1.11)
+### 2020/10/10 (ver1.11)
 
 Fixed with the execution of Dynamic Animation on the map .
 
-2020/10/07 (ver1.10)
+### 2020/10/07 (ver1.10)
 
 Supports text reading plugins .
 
-2020/10/04 (ver1.09)
+### 2020/10/04 (ver1.09)
 
 Added back , head , and foot templates.
 Corrected the movement position when targeting overhead (position = 0). The feet of the actor and the head of the subject are aligned.
