@@ -10,38 +10,12 @@ The following is an introductory video.
 [INSERT VIDEO HERE]
 
 # Table of Contents
-
-Introduction method
-
-Change log
-
-How to Use
-
-Basic usage (separate window)
-
-Template description
-
-Mobile template (separate window)
-Acting template (separate window)
-Display template (separate window)
-Control system template (separate window)
-
-Other information
-
-List of plug-in parameters (separate window)
-Template definition list (separate window)
-Other functions, etc. (separate window)
-
-Sample technique
-
-Sample technique ① (separate window)
-Sample technique ② (separate window)
-Sample technique (bow) (separate window)
-Sample technique (magic) (separate window)
-Sample technique (combination technique) (separate window)
-Sample technique (external cooperation) (separate window)
-
-About competition ver1.04
+* [Table of Contents](#table-of-contents)
+* [Introduction method](#introduction-method)
+* [Change log](#change-log)
+* [How to Use](#how-to-use)
+* [Basic usage](#basic-usage)
+* [About competition ver1.04](#about-competition-ver104)
 
 # Introduction method
 
