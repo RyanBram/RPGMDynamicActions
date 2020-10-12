@@ -119,7 +119,7 @@ ey = defaultY + 100 // 終点Ｙ座標 = 対象 + 100
 
 You will attack by moving slightly downward.
 The X coordinate is the same as in the case of "near", so it is used as it is.
-　
+
 "DefaultX" and "defaultY" contain the coordinates of the target (b) in consideration of the animation position settings (overhead, center, feet, screen).
 
 - Overhead： `defaultX = b.x, defaultY = b.y - b.height`
