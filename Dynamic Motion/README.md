@@ -13,9 +13,51 @@ The following is an introductory video.
 # Table of contents
 
 - [Introduction method](#introduction-method)
-- [Change log](#change-log)
 - [How to Use](#how-to-use)
-  - [Basic usage](#basic-usage)
+- [About competition ver1.04](#about-competition-ver104)
+- [Change log](#change-log)
+
+## Introduction method
+
+Download the following two files and throw them into '[Project]\js\plugins'.
+Please turn on the function from the plug-in management of RPG Maker MV.
+- [NRP_DynamicMotion.js](https://newrpg.up.seesaa.net/mv/NRP_DynamicMotion.js)
+- [NRP_DynamicAnimation.js](https://newrpg.up.seesaa.net/mv/NRP_DynamicAnimation.js)
+
+*) Please see the explanation page for the animation plug-in (NRP_DynamicAnimation.js) .
+
+Optional Plugins
+
+Launch Dynamic Animation on the map ( details )
+- [NRP_DynamicAnimationMap.js](https://newrpg.up.seesaa.net/mv/NRP_DynamicAnimationMap.js)
+
+Weight reduction of animation for MV ( details )
+- [NRP_LightAnimation.js](https://newrpg.up.seesaa.net/mv/NRP_LightAnimation.js)
+
+Read the definition of DynamicAnimation & Motion from txt ( details )
+- [NRP_DynamicReadTxt.js](https://newrpg.up.seesaa.net/mv/NRP_DynamicReadTxt.js)
+
+## How to Use
+
+Battler works by calling the template from the note tag of the skill (item). The following is an example of calling a near template.
+```
+<D-Motion: near />
+```
+
+Furthermore, parameters can be added and overwritten for the template.
+```
+<D-Motion:near>
+frame = 8 // moving time
+</D-Motion>
+```
+
+The minimum usage is as above, but there are numerous parameters.
+First of all, it will be easy to understand from the "Basic usage" page below.
+After that, it is smooth to refer to "Explanation of template" and "List of plug-in parameters".
+
+If it is troublesome, the "Sample Technique" page is recommended. It's quick because you can make skills almost by copying.
+
+- [Basic usage](#basic-usage)
 - [Template description](#template-description)
   - Mobile template (separate window)
   - Acting template (separate window)
@@ -32,30 +74,13 @@ The following is an introductory video.
   - Sample technique (magic) (separate window)
   - Sample technique (combination technique) (separate window)
   - Sample technique (external cooperation) (separate window)
-- [About competition ver1.04](#about-competition-ver104)
 
-## Introduction method
+## About competition ver1.04
 
-Download the following two files and throw them into '[Project]\js\plugins'. Please turn on the function from the plug-in management of RPG Maker MV.
+From ver1.04, you can change the display priority .
+However, this feature has a large impact and can be turned off in the event of conflicts or other issues.
 
-NRP_DynamicMotion.js ver1.11 (2020/10/10)
-NRP_DynamicAnimation.js ver1.16 (2020/10/10)
-
-* Please see the explanation page for the animation plug-in (NRP_DynamicAnimation.js) .
-
-option
-
-Launch Dynamic Animation on the map ( details )
-
-NRP_DynamicAnimationMap.js
-
-Weight reduction of animation for MV ( details )
-
-NRP_LightAnimation.js
-
-Read the definition of DynamicAnimation & Motion from txt ( details )
-
-NRP_DynamicReadTxt.js
+For example, "YEP_BattleEngineCore" has a similar function. If there is a conflict, it is safer to turn off the function and leave it to that.
 
 ## Change log
 
@@ -153,55 +178,3 @@ Release!
 Fixed a bug that an error occurs when there are 3 or less parties. (Ver1.001)
 Fixed a bug that an error occurs when executing with save data in the middle. (Ver1.002)
 
-## How to Use
-
-battler works by calling the template from the memo field of the skill (item). The following is an example of calling a near template.
-```
-<D-Motion: near />
-```
-
-Furthermore, parameters can be added and overwritten for the template.
-```
-<D-Motion:near>
-frame = 8 // moving time
-</D-Motion>
-```
-
-The minimum usage is as above, but there are numerous parameters.
-First of all, it will be easy to understand from the "Basic usage" page below.
-After that, it is smooth to refer to "Explanation of template" and "List of plug-in parameters".
-
-If it is troublesome, the "Sample Technique" page is recommended. It's quick because you can make skills almost by copying.
-
-* Basic usage
-
-## Template description
-
-* Mobile template
-* Acting template
-* Display template
-* Control system template
-
-## Other information
-
-* Plugin parameter list
-* Template definition list
-* Other functions etc.
-
-## Sample technique
-
-* Sample technique ①
-* Sample technique ②
-* Sample technique (bow)
-* Sample technique (magic)
-* Sample technique (combination technique)
-* Sample technique (external cooperation)
-
-## About competition ver1.04
-
-From ver1.04, you can change the display priority .
-However, this feature has a large impact and can be turned off in the event of conflicts or other issues.
-
-For example, "YEP_BattleEngineCore" has a similar function. If there is a conflict, it is safer to turn off the function and leave it to that.
-
-＞ RPG Maker MZ & NV Return to Table of Contents
