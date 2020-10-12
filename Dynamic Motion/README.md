@@ -57,17 +57,17 @@ After that, it is smooth to refer to "Explanation of template" and "List of plug
 
 If it is troublesome, the "Sample Technique" page is recommended. It's quick because you can make skills almost by copying.
 
-- [Basic usage](#basic-usage)
-- [Template description](#template-description)
+- [Basic usage](https://github.com/RyanBram/RPGMDynamicActions/blob/main/Dynamic%20Motion/Basic%20Usage.md)
+- Template description
   - Mobile template (separate window)
   - Acting template (separate window)
   - Display template (separate window)
   - Control system template (separate window)
-- [Other information](other-information)
+- Other information
   - List of plug-in parameters (separate window)
   - Template definition list (separate window)
   - Other functions, etc. (separate window)
-- [Sample technique](sample-technique)
+- Sample technique
   - Sample technique ① (separate window)
   - Sample technique ② (separate window)
   - Sample technique (bow) (separate window)
