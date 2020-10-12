@@ -1,21 +1,21 @@
-　It is a plug-in that freely controls the battle motion when executing the skill.
+It is a plug-in that freely controls the battle motion when executing the skill.
 
-　You can move the butler and perform motions at any time.
-　Furthermore, by linking with Dynamic Animation, you can freely insert animations.
+You can move the battler and perform motions at any time.
+Furthermore, by linking with Dynamic Animation, you can freely insert animations.
 
-　We aimed for something with a lower threshold than existing motion plug-ins such as YEP_BattleEngineCore.
+We aimed for something with a lower threshold than existing motion plug-ins such as YEP_BattleEngineCore.
 
-　The following is an introductory video.
+The following is an introductory video.
 
 [INSERT VIDEO HERE]
 
-table of contents
+# Table of Contents
 
 Introduction method
 
 Change log
 
-how to use
+How to Use
 
 Basic usage (separate window)
 
@@ -43,30 +43,30 @@ Sample technique (external cooperation) (separate window)
 
 About competition ver1.04
 
-Introduction method
+# Introduction method
 
-　Download the following two files and throw them into [Project] \ js \ plugins. Please turn on the function from the plug-in management of Tukuru MV.
+Download the following two files and throw them into '[Project]\js\plugins'. Please turn on the function from the plug-in management of RPG Maker MV.
 
-　NRP_DynamicMotion.js ver1.11 (2020/10/10)
-　NRP_DynamicAnimation.js ver1.16 (2020/10/10)
+NRP_DynamicMotion.js ver1.11 (2020/10/10)
+NRP_DynamicAnimation.js ver1.16 (2020/10/10)
 
-　* Please see the explanation page for the animation plug-in (NRP_DynamicAnimation.js) .
+* Please see the explanation page for the animation plug-in (NRP_DynamicAnimation.js) .
 
 option
 
 Launch Dynamic Animation on the map ( details )
 
-　NRP_DynamicAnimationMap.js
+NRP_DynamicAnimationMap.js
 
 Weight reduction of animation for MV ( details )
 
-　NRP_LightAnimation.js
+NRP_LightAnimation.js
 
 Read the definition of DynamicAnimation & Motion from txt ( details )
 
-　NRP_DynamicReadTxt.js
+NRP_DynamicReadTxt.js
 
-Change log
+# Change log
 
 2020/10/10 (ver1.11)
 
@@ -81,17 +81,17 @@ Supports text reading plugins .
 Added back , head , and foot templates.
 Corrected the movement position when targeting overhead (position = 0). The feet of the actor and the head of the subject are aligned.
 
-* Additions / modifications of templates will not be reflected unless the plug-in is re-registered.
+*) Additions / modifications of templates will not be reflected unless the plug-in is re-registered.
 However, if you re-register, all the setting changes will be initialized.
 If you want to avoid it, we recommend copying and pasting from the template definition list .
 
-2020/09/22 (ver1.08-> 1.081)
+### 2020/09/22 (ver1.08-> 1.081)
 
 Changed the execution condition (condition) to a repeat item.
 Example: Motion display only when the target is sleeping with "condition = b.isStateAffected (10)".
 Fixed a bug that an error occurs because the target cannot be acquired when there is no range. (It targets itself as the default.) (09/27 ver1.081)
 
-2020/06/07 (ver1.07-> 1.072)
+###2020/06/07 (ver1.07-> 1.072)
 
 Supports plug-in commands .
 Example: You can call it like "plugin = hoge 100 200".
@@ -100,9 +100,9 @@ Fixed a bug that the motion is cleared after the damage processing is completed.
 Modified to calculate Z coordinate in real time. (Ver1.071)
 The template modification in v1.06 was not reflected in the plugin itself, so it was modified. (09/03 ver1.072)
 
-2020/05/18 (ver1.06-> 1.063)
+###2020/05/18 (ver1.06-> 1.063)
 
-Added the function to change the referenced butler (a, b). (* Settings are on the Dynamic Animation side)
+Added the function to change the referenced battler (a, b). (* Settings are on the Dynamic Animation side)
 Along with that, the "pierce", "stepForward", "stepBack", "friend only (ifActor)", and "enemy only (ifEnemy)" type templates have been modified.
 * Because it is compatible, there is no difference in operation even if it is not reflected.
 Fixed a bug that the operation is delayed when the plug-in placement is higher than Dynamic Animation.
@@ -111,23 +111,23 @@ Fixed the late damage display to be displayed in the foreground. (Ver1.061)
 Fixed to bring the characters in the air to the front. (Ver1.063)
 * Please check the Dynamic Animation side as it has been updated a lot.
 
-2020/05/09 (ver1.05)
+### 2020/05/09 (ver1.05)
 
 Significantly reduced the weight of mass animation operations.
 The processing efficiency on the motion side has been improved accordingly.
 
-2020/05/06 (ver1.04)
+### 2020/05/06 (ver1.04)
 
 Implemented a function to change the display priority (Z coordinate) .
 * The Dynamic Animation side has also been updated (ver1.07).
 * Added notes about competition .
 Supports production control using the immortal state .
-Implemented butler image change (battlerImage) .
+Implemented battler image change (battlerImage) .
 Added items related to circular motion .
 Added a revolve type template .
 Fixed to refer to width for definition of pierce type.
 
-2020/04/10 (ver1.03-> 1.031)
+### 2020/04/10 (ver1.03-> 1.031)
 
 Added a user setting function for tag names .
 You can write like <D-Motion: near /> → <dm: near />.
@@ -139,7 +139,7 @@ Implemented each parameter of "X coordinate correction (addX)", "Y coordinate co
 Added a shake type template. ( Details )
 Fixed a bug that an error occurs when a missed target is missed. (04/24 ver1.031)
 
-2020/03/29 (ver1.02-> 1.022)
+### 2020/03/29 (ver1.02-> 1.022)
 
 Added soon (soon) template. ( Details )
 Added zoom templates (3 types). ( Details )
@@ -149,64 +149,68 @@ Stabilized behavior when repeating the same motion. (Ver1.022)
 Implemented a delay (performerDelay) for each motion target . (Ver1.022)
 You can always refer to the action subject of the skill with "subject". (Ver1.022)
 
-2020/03/23 (ver1.01)
+### 2020/03/23 (ver1.01)
 
 Added the function to execute common events. ( Details )
 Added script execution function.
 * A script-based zoom process has been added to sample technique (2 ).
 Fixed a bug that jumps do not occur when the execution time is 0.
 
-2020/03/21 (ver1.00-> 1.002)
+### 2020/03/21 (ver1.00-> 1.002)
 
 Release!
 Fixed a bug that an error occurs when there are 3 or less parties. (Ver1.001)
 Fixed a bug that an error occurs when executing with save data in the middle. (Ver1.002)
 
-how to use
+# How to Use
 
-Butler works by calling the template from the memo field of the skill (item). The following is an example of calling a near template.
-    <D-Motion: near />
+battler works by calling the template from the memo field of the skill (item). The following is an example of calling a near template.
+```
+<D-Motion: near />
+```
 
 Furthermore, parameters can be added and overwritten for the template.
-    <D-Motion: near>
-    frame = 8 // Travel time
-    </ D-Motion>
+```
+<D-Motion:near>
+frame = 8 // moving time
+</D-Motion>
+```
 
-　The minimum usage is as above, but there are numerous parameters.
-　First of all, it will be easy to understand from the "Basic usage" page below.
-　After that, it is smooth to refer to "Explanation of template" and "List of plug-in parameters".
+The minimum usage is as above, but there are numerous parameters.
+First of all, it will be easy to understand from the "Basic usage" page below.
+After that, it is smooth to refer to "Explanation of template" and "List of plug-in parameters".
 
-　If it is troublesome, the "Sample Technique" page is recommended. It's quick because you can make skills almost by copying.
+If it is troublesome, the "Sample Technique" page is recommended. It's quick because you can make skills almost by copying.
 
-Basic usage
+# Basic usage
 
 Template description
 
-Mobile template
-Acting template
-Display template
-Control system template
+* Mobile template
+* Acting template
+* Display template
+* Control system template
 
 Other information
 
-Plugin parameter list
-Template definition list
-Other functions etc.
+* Plugin parameter list
+* Template definition list
+* Other functions etc.
 
 Sample technique
 
-Sample technique ①
-Sample technique ②
-Sample technique (bow)
-Sample technique (magic)
-Sample technique (combination technique)
-Sample technique (external cooperation)
+* Sample technique ①
+* Sample technique ②
+* Sample technique (bow)
+* Sample technique (magic)
+* Sample technique (combination technique)
+* Sample technique (external cooperation)
 
-About competition ver1.04
+# About competition ver1.04
 
-　From ver1.04, you can change the display priority .
-　However, this feature has a large impact and can be turned off in the event of conflicts or other issues.
+From ver1.04, you can change the display priority .
+However, this feature has a large impact and can be turned off in the event of conflicts or other issues.
 
-　For example, "YEP_BattleEngineCore" has a similar function. If there is a conflict, it is safer to turn off the function and leave it to that.
+For example, "YEP_BattleEngineCore" has a similar function. If there is a conflict, it is safer to turn off the function and leave it to that.
 
-　＞ RPG Maker MZ & NV Return to Table of Contents
+＞ RPG Maker MZ & NV Return to Table of Contents
