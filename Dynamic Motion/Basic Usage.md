@@ -122,10 +122,10 @@ The X coordinate is the same as in the case of "near", so it is used as it is.
 　
 "DefaultX" and "defaultY" contain the coordinates of the target (b) in consideration of the animation position settings (overhead, center, feet, screen).
 
-Overhead： `defaultX = b.x, defaultY = b.y - b.height`
-Center： `defaultX = b.x, defaultY = b.y - b.height / 2`
-Feet： `defaultX = b.x, defaultY = b.y`
-Screen： Plugin parameter settings for both defaultX and defaultY
+- Overhead： `defaultX = b.x, defaultY = b.y - b.height`
+- Center： `defaultX = b.x, defaultY = b.y - b.height / 2`
+- Feet： `defaultX = b.x, defaultY = b.y`
+- Screen： `Plugin parameter settings for both defaultX and defaultY`
 
 
 Details are as above.
