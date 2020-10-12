@@ -91,7 +91,7 @@ Changed the execution condition (condition) to a repeat item.
 Example: Motion display only when the target is sleeping with "condition = b.isStateAffected (10)".
 Fixed a bug that an error occurs because the target cannot be acquired when there is no range. (It targets itself as the default.) (09/27 ver1.081)
 
-###2020/06/07 (ver1.07-> 1.072)
+### 2020/06/07 (ver1.07-> 1.072)
 
 Supports plug-in commands .
 Example: You can call it like "plugin = hoge 100 200".
@@ -100,7 +100,7 @@ Fixed a bug that the motion is cleared after the damage processing is completed.
 Modified to calculate Z coordinate in real time. (Ver1.071)
 The template modification in v1.06 was not reflected in the plugin itself, so it was modified. (09/03 ver1.072)
 
-###2020/05/18 (ver1.06-> 1.063)
+### 2020/05/18 (ver1.06-> 1.063)
 
 Added the function to change the referenced battler (a, b). (* Settings are on the Dynamic Animation side)
 Along with that, the "pierce", "stepForward", "stepBack", "friend only (ifActor)", and "enemy only (ifEnemy)" type templates have been modified.
