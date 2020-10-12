@@ -1,3 +1,4 @@
+#DynamicMotion User Manual
 It is a plug-in that freely controls the battle motion when executing the skill.
 
 You can move the battler and perform motions at any time.
@@ -9,15 +10,31 @@ The following is an introductory video.
 
 [INSERT VIDEO HERE]
 
-# Table of Contents
-* [Table of Contents](#table-of-contents)
-* [Introduction method](#introduction-method)
-* [Change log](#change-log)
-* [How to Use](#how-to-use)
-* [Basic usage](#basic-usage)
-* [About competition ver1.04](#about-competition-ver104)
+# Table of contents
 
-# Introduction method
+- [Introduction method](#introduction-method)
+- [Change log](#change-log)
+- [How to Use](#how-to-use)
+  - [Basic usage](#basic-usage)
+- [Template description](#template-description)
+  - Mobile template (separate window)
+  - Acting template (separate window)
+  - Display template (separate window)
+  - Control system template (separate window)
+- [Other information](other-information)
+  - List of plug-in parameters (separate window)
+  - Template definition list (separate window)
+  - Other functions, etc. (separate window)
+- [Sample technique](sample-technique)
+  - Sample technique ① (separate window)
+  - Sample technique ② (separate window)
+  - Sample technique (bow) (separate window)
+  - Sample technique (magic) (separate window)
+  - Sample technique (combination technique) (separate window)
+  - Sample technique (external cooperation) (separate window)
+- [About competition ver1.04](#about-competition-ver104)
+
+## Introduction method
 
 Download the following two files and throw them into '[Project]\js\plugins'. Please turn on the function from the plug-in management of RPG Maker MV.
 
@@ -40,7 +57,7 @@ Read the definition of DynamicAnimation & Motion from txt ( details )
 
 NRP_DynamicReadTxt.js
 
-# Change log
+## Change log
 
 ### 2020/10/10 (ver1.11)
 
@@ -136,7 +153,7 @@ Release!
 Fixed a bug that an error occurs when there are 3 or less parties. (Ver1.001)
 Fixed a bug that an error occurs when executing with save data in the middle. (Ver1.002)
 
-# How to Use
+## How to Use
 
 battler works by calling the template from the memo field of the skill (item). The following is an example of calling a near template.
 ```
@@ -156,22 +173,22 @@ After that, it is smooth to refer to "Explanation of template" and "List of plug
 
 If it is troublesome, the "Sample Technique" page is recommended. It's quick because you can make skills almost by copying.
 
-# Basic usage
+* Basic usage
 
-Template description
+## Template description
 
 * Mobile template
 * Acting template
 * Display template
 * Control system template
 
-Other information
+## Other information
 
 * Plugin parameter list
 * Template definition list
 * Other functions etc.
 
-Sample technique
+## Sample technique
 
 * Sample technique ①
 * Sample technique ②
@@ -180,7 +197,7 @@ Sample technique
 * Sample technique (combination technique)
 * Sample technique (external cooperation)
 
-# About competition ver1.04
+## About competition ver1.04
 
 From ver1.04, you can change the display priority .
 However, this feature has a large impact and can be turned off in the event of conflicts or other issues.
