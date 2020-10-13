@@ -1,0 +1,136 @@
+# DynamicMotion control system template [RPG Maker MV plug-in]
+This page is part of the description of the Dynamic Motion plug-in .
+
+I will introduce the control system template.
+
+
+### Target
+
+Change the target of motion to the target of skill.
+Basically, it is used in combination with other templates.
+```
+<D-Motion:attack/> // 武器振り
+<D-Animation/> // アニメーション
+<D-Motion:target&stepBack/> // 対象が後退
+<D-Motion:target&home/> // 対象が戻る
+```
+![Image](https://image.gif)
+
+I tried to make the attacked target retreat.
+
+### Execute for each target (every)
+
+Repeat the motion for the skill target.
+For example, if there are 4 skill targets, the motion is repeated 4 times.
+
+Also, the repetition interval is specified by "nextDelay".
+This value is in animation frame units.
+By matching the animation and spacing, it becomes a natural action.
+```
+<D-Motion:every&attack> // 全対象に武器振り
+motionFrame = 2 // 2*3=6フレーム
+nextDelay = 6 // 繰り返し間隔
+</D-Motion>
+<D-Animation>
+nextDelay = 6 // 繰り返し間隔
+</D-Animation>
+```
+![Image](https://image.gif)
+
+The above is an example combined with a random multiple attack, but it works fine with a whole attack.
+
+There are some tricks to make it look natural, such as adjusting the motion time.
+*) MotionFrame is the frame time of one pattern. Actually, it takes time for x3 patterns.
+
+### Wait
+
+Wait for the operation by combining with other templates.
+```
+<D-Motion:attack&wait/> // 武器振りを待つ
+```
+![Image](https://image.gif)
+
+By the way, many mobile templates include weighting from the beginning.
+Basically, you don't have to bother with it.
+
+### No weight (noWait)
+
+By concatenating after other templates, the weight of the operation is skipped.
+Combine it with a mobile template that has weights from the beginning.
+```
+<D-Motion:near&noWait/> // 接近を待たずに
+<D-Animation:shotRandom/> // アニメを再生
+```
+![Image](https://image.gif)
+
+...... Well, in the above example, it's the same even if you run the animation first.
+
+### Delay
+
+Wait for the previous motion or animation to work.
+```
+<D-Motion:jump/> // ジャンプ
+<D-Motion:delay&near/> // ジャンプを待って移動
+```
+![Image](https://image.gif)
+
+Only the weight and the specified timing are different, so use the one you like.
+
+### No delay (noDelay)
+
+Disable the delay by concatenating it after the other template.
+...... I prepared it in the flow, but the delay is attached from the beginning only for the "return" type, so it is not very useful.
+Maybe if you want to return multiple butlers at the same time.
+```
+<D-Motion:near&jump&attack/> // 接近＆ジャンプ＆武器振り
+<D-Animation/> // アニメーション
+<D-Motion:target&stepBack/> // 対象が後退
+<D-Motion:target&return/> // 対象が元の位置へ
+<D-Motion:return&noDelay/> // 自分もディレイなしで元の位置へ
+```
+![Image](https://image.gif)
+
+### The target is another person (ifOther)
+
+Execute only when the target of the skill is other than yourself.
+
+### The target is myself (ifSelf)
+
+Only execute if the target of the skill is yourself.
+
+As for how to use it together, for example, you can use it like this.
+```
+<D-Setting:NoStep> // 前進しない
+<D-Motion:near&mirror&ifOther/> // 対象が他者なら反転して接近
+<D-Motion:stepForward&ifSelf/> // 対象が自分なら一歩前進
+<D-Animation/>
+<D-Motion:return&ifOther/> // 対象が他者なら戻る
+```
+![Image](https://image.gif)
+
+If the target is a companion, move forward and face each other to use the item.
+However, if the target is yourself, it is unnatural because you turn to the back on the spot.
+
+
+
+Therefore, if I am the target, I simply go one step further and use it.
+
+### Only allies (ifActor)
+
+### Enemy only (ifEnemy)
+
+Each is executed only when the action subject is an actor and only when the enemy character.
+Please use it when you want to divide the processing between your allies and enemies.
+
+### Immediate (soon) ver1.02
+
+Execute each instruction immediately (1/60 seconds).
+For example, when you want to immediately reflect changes in transparency, angle, and motion.
+It can also be used for teleportation.
+```
+<D-Motion:near&soon/> // 接近＆即時
+<D-Motion:attack/> // 武器振り
+<D-Animation/> // アニメーション
+<D-Motion:return&soon/> // 戻る＆即時
+```
+![Image](https://image.gif)

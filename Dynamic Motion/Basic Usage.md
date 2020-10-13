@@ -1,6 +1,6 @@
 # DynamicMotion Basic usage [RPG Maker MV plug-in]
 
-This page is part of the description of the Dynamic Motion plug-in .
+This page is part of the description of the Dynamic Motion plug-in.
 
 This will introduce you the basic usage of this plug-in.
 You can copy and paste as it is, so feel free to use it.
@@ -11,7 +11,7 @@ You can copy and paste as it is, so feel free to use it.
 
 Perform the motion. Please refer to the plug-in parameter list for what kind of motion there is.
 As an example, write the following in the note tag of the skill (or item).
-* Please note the presence or absence of "/" at the end.
+*) Please note the presence or absence of "/" at the end of `<D-Motion>` and `<D-Animation>`.
 ```
 <D-Motion>
 motion = thrust // 突き
@@ -21,12 +21,13 @@ motion = thrust // 突き
 ![Image](https://newrpg.up.seesaa.net/image/20200315_thrust.gif)
 
 At the same time as the action of "thrust", the animation set for the skill is played.
-For <D-Animation /> , refer to the description of the Dynamic Animation plug-in .
+For <D-Animation/> , refer to the description of the Dynamic Animation plug-in .
 
-Animation specification is optional. After the operation is completed, the animation set for the skill will be played automatically.
-If you don`t need to make fine adjustments, this is fine.
+Animation specification is optional.
+After the operation is completed, the animation set for the skill will be played automatically.
+If you don`t need to make explicit setup, this is fine.
 
-Also, if you call the template, you can omit it as follows.
+Also, if you call the pre-made template, you can omit it as follows.
 ```
 <D-Motion:thrust/> // 突き
 <D-Animation/> // アニメーション
@@ -143,8 +144,8 @@ In addition, let`s put in the process of returning to the original position prop
 ```
 ![Image](https://newrpg.up.seesaa.net/image/20200314_dashSlash.gif)
 
-Even if this is not specified, the actor will automatically return to its original position.
-This is due to the specifications of Maker MV.
+Even if this is not explicitly specified, the actor will automatically return to its original position.
+This is due to the specifications of RPG Maker MV.
 However, if the user of the skill is an enemy, it will not return automatically.
 Basically, we recommend that you specify it properly.
 
