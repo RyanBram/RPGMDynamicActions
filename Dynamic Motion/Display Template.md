@@ -22,7 +22,7 @@ ex += 48 * mirroring // 対象の少し手前に移動
 <D-Animation/>
 <D-Motion:return/> // 戻る
 ```
-![Image](https://image.gif)
+![Image](https://newrpg.up.seesaa.net/image/20200318_invisible.gif)
 
 I tried to combine transparency and detransparency.
 
@@ -32,7 +32,7 @@ I tried to combine transparency and detransparency.
 <D-Animation/> // アニメーション
 <D-Motion:return/> // 戻る
 ```
-![Image](https://image.gif)
+![Image](https://newrpg.up.seesaa.net/image/20200320_mirror.gif)
 
 It can be used for skills and items for allies.
 It can be combined with an attack, but be careful as it changes the arm that swings the weapon.
@@ -67,7 +67,7 @@ The following is an example of combining with your own zoom and the target zoom.
 <D-Animation:wait/> // アニメーション＆ウェイト
 <D-Motion:zoomOff/> // ズーム解除
 ```
-![Image](https://image.gif)
+![Image](https://newrpg.up.seesaa.net/image/20200329_zoomA.gif)
 
 ```
 <D-Motion:near&zoomB/> // 対象にズーム
@@ -75,7 +75,7 @@ The following is an example of combining with your own zoom and the target zoom.
 <D-Animation/> // アニメーション
 <D-Motion:return&zoomOff/> // ズーム解除
 ```
-![Image](https://image.gif)
+![Image](https://newrpg.up.seesaa.net/image/20200329_zoomB.gif)
 
 
 ### Vibration (shake) ver1.03
@@ -86,7 +86,7 @@ Vibrates the motion target. The vibration width is 6 pixels in total on the left
 <D-Motion:attack/> // 武器振り
 <D-Motion:target&shake/> // 対象を振動
 ```
-![Image](https://image.gif)
+![Image](https://newrpg.up.seesaa.net/image/20200410_shake.gif)
 
 Also, if you want to increase the vibration width, multiply "addX" by a value.
 ```
@@ -96,4 +96,4 @@ Also, if you want to increase the vibration width, multiply "addX" by a value.
 addX *= 20 // 振動幅２０倍
 </D-Motion>
 ```
-![Image](https://image.gif)
+![Image](https://newrpg.up.seesaa.net/image/20200410_shake2.gif)

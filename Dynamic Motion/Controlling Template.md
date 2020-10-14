@@ -14,7 +14,7 @@ Basically, it is used in combination with other templates.
 <D-Motion:target&stepBack/> // 対象が後退
 <D-Motion:target&home/> // 対象が戻る
 ```
-![Image](https://image.gif)
+![Image](https://newrpg.up.seesaa.net/image/20200318_knockBack.gif)
 
 I tried to make the attacked target retreat.
 
@@ -35,7 +35,7 @@ nextDelay = 6 // 繰り返し間隔
 nextDelay = 6 // 繰り返し間隔
 </D-Animation>
 ```
-![Image](https://image.gif)
+![Image](https://newrpg.up.seesaa.net/image/20200316_midare.gif)
 
 The above is an example combined with a random multiple attack, but it works fine with a whole attack.
 
@@ -48,12 +48,12 @@ Wait for the operation by combining with other templates.
 ```
 <D-Motion:attack&wait/> // 武器振りを待つ
 ```
-![Image](https://image.gif)
+![Image](https://newrpg.up.seesaa.net/image/20200320_wait.gif)
 
 By the way, many mobile templates include weighting from the beginning.
 Basically, you don't have to bother with it.
 
-### No weight (noWait)
+### No Wait (noWait)
 
 By concatenating after other templates, the weight of the operation is skipped.
 Combine it with a mobile template that has weights from the beginning.
@@ -61,7 +61,7 @@ Combine it with a mobile template that has weights from the beginning.
 <D-Motion:near&noWait/> // 接近を待たずに
 <D-Animation:shotRandom/> // アニメを再生
 ```
-![Image](https://image.gif)
+![Image](https://newrpg.up.seesaa.net/image/20200320_noWait.gif)
 
 ...... Well, in the above example, it's the same even if you run the animation first.
 
@@ -72,7 +72,7 @@ Wait for the previous motion or animation to work.
 <D-Motion:jump/> // ジャンプ
 <D-Motion:delay&near/> // ジャンプを待って移動
 ```
-![Image](https://image.gif)
+![Image](https://newrpg.up.seesaa.net/image/20200320_delay.gif)
 
 Only the weight and the specified timing are different, so use the one you like.
 
@@ -88,7 +88,7 @@ Maybe if you want to return multiple butlers at the same time.
 <D-Motion:target&return/> // 対象が元の位置へ
 <D-Motion:return&noDelay/> // 自分もディレイなしで元の位置へ
 ```
-![Image](https://image.gif)
+![Image](https://newrpg.up.seesaa.net/image/20200320_noDelay.gif)
 
 ### The target is another person (ifOther)
 
@@ -106,7 +106,7 @@ As for how to use it together, for example, you can use it like this.
 <D-Animation/>
 <D-Motion:return&ifOther/> // 対象が他者なら戻る
 ```
-![Image](https://image.gif)
+![Image](https://newrpg.up.seesaa.net/image/20200318_ifOther.gif)
 
 If the target is a companion, move forward and face each other to use the item.
 However, if the target is yourself, it is unnatural because you turn to the back on the spot.
@@ -133,4 +133,4 @@ It can also be used for teleportation.
 <D-Animation/> // アニメーション
 <D-Motion:return&soon/> // 戻る＆即時
 ```
-![Image](https://image.gif)
+![Image](https://newrpg.up.seesaa.net/image/20200329_soon.gif)

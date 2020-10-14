@@ -12,7 +12,7 @@ Swing the equipped weapon.
 <D-Motion:attack/> // 武器振り
 <D-Animation/> // アニメーション
 ```
-![Image](https://image.gif)
+![Image](https://newrpg.up.seesaa.net/image/20200320_attack.gif)
 
 By the way, <D-Animation /> can be omitted, but in that case, the animation will be played after the weapon swing is completed.
 
@@ -24,7 +24,7 @@ weaponId = 2 // id = 2（斧）
 </D-Motion>
 <D-Animation/> // アニメーション
 ```
-![Image](https://image.gif)
+![Image](https://newrpg.up.seesaa.net/image/20200320_weaponId.gif)
 
 
 ### Attack R (attackR)
@@ -35,7 +35,7 @@ R stands for reverse.
 <D-Motion:attackR/> // 武器振り（逆）
 <D-Animation/> // アニメーション
 ```
-![Image](https://image.gif)
+![Image](https://newrpg.up.seesaa.net/image/20200320_attackR.gif)
 
 For example, if you use a sword, it feels like you're swinging it up ...
 Depending on the graphics, it may look better.
@@ -48,7 +48,7 @@ The pattern is in the order of 0 → 1 → 2 motion.
 <D-Motion:attack2/> // 攻撃パターン2
 <D-Animation/> // アニメーション
 ```
-![Image](https://image.gif)
+![Image](https://newrpg.up.seesaa.net/image/20200320_attackP2.gif)
 
 If you combine this with the weapon graphic settings, you may find a way to use it.
 
@@ -60,7 +60,7 @@ As it is, it seems that it can be used for bare hand skills.
 <D-Motion:thrust/> // 突き
 <D-Animation/> // アニメーション
 ```
-![Image](https://image.gif)
+![Image](https://newrpg.up.seesaa.net/image/20200320_thrust.gif)
 
 
 ### Swing
@@ -71,7 +71,7 @@ How about a throwing technique?
 <D-Motion:swing/> // 振り
 <D-Animation:shot/> // アニメーションを飛ばす
 ```
-![Image](https://image.gif)
+![Image](https://newrpg.up.seesaa.net/image/20200320_swing.gif)
 
 
 ### Missile
@@ -84,7 +84,7 @@ We will leave the usage to you.
 <D-Motion:missile/> // 飛び道具
 <D-Animation:shot/> // アニメーションを飛ばす
 ```
-![Image](https://image.gif)
+![Image](https://newrpg.up.seesaa.net/image/20200320_missile.gif)
 
 
 ### Magic (spell)
@@ -97,7 +97,7 @@ Specify this if required.
 <D-Animation:spell/> // 発動アニメーション
 <D-Animation/> // 攻撃アニメーション
 ```
-![Image](https://image.gif)
+![Image](https://newrpg.up.seesaa.net/image/20200320_spell.gif)
 
 I tried to set it with the activation animation.
 The size and transparency of the activation animation have been adjusted for easy viewing.
@@ -110,4 +110,4 @@ Specify this if required.
 ```
 <D-Motion:skill/> // スキルモーション
 ```
-![Image](https://image.gif)
+![Image](https://newrpg.up.seesaa.net/image/20200320_skill.gif)
