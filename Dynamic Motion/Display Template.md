@@ -5,12 +5,12 @@ This page is part of the description of the Dynamic Motion plug-in .
 I will introduce the display template.
 *) The ver notation is based on the MV version of Dynamic Motion, but all are also valid for Dynamic Motion MZ.
 
-### Invisible
+### invisible
 
-Make the butler transparent.
+Make the battler transparent.
 To make it clear, you need to specify "visible" below.
 
-### Clear (visible)
+### visible
 
 Releases the transparent state.
 ```
@@ -26,7 +26,7 @@ ex += 48 * mirroring // 対象の少し手前に移動
 
 I tried to combine transparency and detransparency.
 
-### Invert (mirror)
+### mirror (Invert)
 ```
 <D-Motion:mirror&near/> // 左右反転して対象へ接近
 <D-Animation/> // アニメーション
@@ -40,7 +40,7 @@ It can be combined with an attack, but be careful as it changes the arm that swi
 In addition, it does not return until the left-right reversal is canceled. You need to specify "mirrorOff" below.
 Alternatively, as in the example, it is automatically canceled by the "return" type, so it is recommended to leave it to that.
 
-### Unreverse (mirrorOff)
+### mirrorOff
 
 Cancels the left-right reversal of the butler.
 ```
@@ -49,18 +49,18 @@ Cancels the left-right reversal of the butler.
 ```
 ![Image](https://image.gif)
 
-### Self zoom (zoomA) ver1.021
+### zoomA (Self zoom ver1.021)
 
 Zoom to the action subject.
 
-### Target zoom (zoomB) ver1.021
+### zoomB (Target zoom ver1.021)
 
 Zoom to the target.
 "The subject of action is A" and "the target is B" are the same as the skill calculation formula. It is recommended to remember it when it seems to be confused.
 
-### Zoom Off (zoomOff) ver1.021
+### zoomOff (ver1.021)
 
-Release the zoom.
+Resetting the zoom.
 The following is an example of combining with your own zoom and the target zoom.
 ```
 <D-Motion:zoomA/> // 自分にズーム
@@ -78,7 +78,7 @@ The following is an example of combining with your own zoom and the target zoom.
 ![Image](https://newrpg.up.seesaa.net/image/20200329_zoomB.gif)
 
 
-### Vibration (shake) ver1.03
+### shake (ver1.03)
 
 Vibrates the motion target. The vibration width is 6 pixels in total on the left and right.
 ```

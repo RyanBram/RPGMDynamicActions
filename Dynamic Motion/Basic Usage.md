@@ -36,7 +36,7 @@ Also, if you call the pre-made template, you can omit it as follows.
 The content is exactly the same. The contents of the template can be freely changed / added from the plugin parameters.
 *) Only the ones registered in the template are valid. Not all motions can be called in the same way.
 
-### Approach (near)
+### near (Approaching target)
 
 You can get closer to the target by calling the template as follows.
 ```
@@ -53,7 +53,7 @@ In this way, the processes are executed in the order described.
 Also, the destination depends on the "position" of the set animation. "Overhead", "Center", "Foot", "Screen", move to the position according to each setting.
 (The screen goes to the center of the enemy team.)
 
-### Specify travel time (duration)
+### duration (Specify moving time)
 
 By default, the approach to the enemy is done in 12/60 seconds.
 If you want to change this value for each skill, add the description to the template as follows.
@@ -68,7 +68,7 @@ duration = 6 // 6/60秒で移動
 
 It's speed will become doubled.
 
-### Specify travel time (frame)
+### frame (Specify moving time by frames)
 
 There is another way to specify the travel time.
 ```
@@ -84,7 +84,7 @@ Normally, one frame is 4/60 seconds.
 This is convenient if you want to match the timing with the animation.
 By the way, you can also use decimals and fractions.
 
-### Specify the destination (ex, ey)
+### ex, ey (Specify the destination)
 
 It is also possible to freely specify the destination without using a template.
 ```
@@ -133,7 +133,7 @@ The X coordinate is the same as in the case of "near", so it is used as it is.
 Details are as above.
 It is troublesome to enter `b.y - b.height / 2` one by one, so it is convenient to use this.
 
-### Return
+### return
 
 In addition, let`s put in the process of returning to the original position properly.
 ```
@@ -149,7 +149,7 @@ This is due to the specifications of RPG Maker MV.
 However, if the user of the skill is an enemy, it will not return automatically.
 Basically, we recommend that you specify it properly.
 
-### Do not move forward (NoStep)
+### NoStep (Do not move forward)
 
 It`s a small detail, but in the dash slash above, we take a step forward and then start approaching the enemy.
 If you don`t need to take the first step, add the following description.
@@ -169,7 +169,7 @@ Even in that case, you can move forward by writing <D-Motion: stepForward />.
 
 This is the basic form of the type of skill that shoots close to the enemy. It is convenient to copy and use it.
 
-### Jump
+### jump
 
 Next, let`s jump.
 ```
@@ -219,7 +219,7 @@ If it is delicate to swing the weapon after landing each time, you can also writ
 This one is faster, isn`t it?
 Actually, you can adjust the timing more finely, but since it is a basic edition, it is in such a place.
 
-### Repeat, interval
+### repeat, interval
 
 If you specify "repeat", you can repeat the operation.
 Specify the interval with "interval".
@@ -240,7 +240,7 @@ If no interval is specified, the repeat interval is automatically adjusted to th
 If both are specified, the longer one will be given priority.
 However, loop motions such as walking are not covered.
 
-### MotionDuration
+### motionDuration
 
 Adjust and shorten the length of the motion. This is in 1/60 second units.
 Omit the interval and leave it to the length of the motion.
@@ -259,7 +259,7 @@ motionDuration = 6 // モーション時間
 Weapon swings are faster and motion is no longer interrupted.
 Basically, I think this is more stable than using interval.
 
-### Motion time (motionFrame)
+### motionFrame (Motion time by frame)
 
 As with movement, you can specify the length of motion in animation frame units.
 This is convenient if you want to match the animation.

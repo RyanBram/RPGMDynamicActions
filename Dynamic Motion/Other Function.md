@@ -27,7 +27,7 @@ ex = b.x + 200 * mirroring // 終点Ｘ座標
 </D-Motion>
 ```
 
-This variable called "mirroring" has a value of -1 when the target is an actor.
+This variable called `mirroring` has a value of -1 when the target is an actor.
 By applying this, only the necessary part can be flipped left and right.
 Also, if you want to invert the vertical coordinates in the front view etc.,
 perform the same operation on the Y coordinate side.
@@ -63,18 +63,18 @@ In other words, only the last 100 parts are multiplied.
 To apply it to the whole, set the plug-in setting value as "ex = (bx + 100)" and it's OK.
 There is no problem with addition and subtraction, but be careful with multiplication and division.
 
-## &Combining Template
+## & symbol for combining Template
 
 Templates can be combined by the `&` symbol.
 For example ...
 `<D-Motion:near&jump/>`
 
-And, the definition is fused by connecting the approach type (near) type and jump (jump) type templates with "&". Approach the target while jumping.
+And, the definition is combined by connecting the approach type `near` and `jump` types templates with "&". Approach the target while jumping.
 
-Actually, the values ​​of the template definition registered in the plugin are fused.
+Actually, the values of the template definition registered in the plugin are combined.
 Note that if there is a parameter conflict, the following definition takes precedence.
 
-First of all, the definition of near type is as follows.
+First of all, the definition of `near` type is as follows.
 ```
 <D-Motion>
 wait = (isSync ? 0 : "autoMove")
@@ -93,7 +93,7 @@ motion = wait
 </D-Motion>
 ```
 
-The result of fusing the two is as follows.
+The result of combining the two is as follows.
 ```
 <D-Motion>
 wait = (isSync ? 0 : "autoMove")
@@ -104,22 +104,23 @@ arcY = -100
 motion = wait // 待機モーション
 </D-Motion>
 ```
-The definition of "motion = walk" in the near type has been overwritten with "motion = wait". Please note that it is natural that you cannot take two motions at the same time.
+The definition of `motion = walk` in the near type has been overwritten with `motion = wait`.
+Please note that it is natural that you cannot take two motions at the same time.
 
 There is no limit to the number that can be fused, and 3 or more are possible.
 
-## D-Setting function
+## <D-Setting> function
 
 You can perform the following functions by filling in the memo field.
 If you want to set multiple functions, please describe as follows.
 `<D-Setting:NoStep&Sync>`
 
-### Auto forward disabled (NoStep)
+### NoStep (Auto forward disabled)
 
 Eliminates one step forward when executing skills (items).
 `<D-Setting:NoStep>`
 
-### Parallel execution (Sync)
+### Sync (Parallel execution)
 
 Disables the weight and delay instructions that are initialized in the template.
 It is supposed to be used when you want to perform complicated timing adjustment such as coalescence technique.
@@ -127,7 +128,7 @@ It is supposed to be used when you want to perform complicated timing adjustment
 
 However, it is not always necessary to use it forcibly. If you use templates such as "noWait" and "noDelay", you can create a combination technique without using them. Please use the one that is easy to use.
 
-### Immortal control (Immortal) ver1.04
+### Immortal (Immortal control ver1.04)
 
 By using the immortal state, you can control the production. Set the state to be used in the plug-in parameter in advance .
 `<D-Setting:Immortal>`

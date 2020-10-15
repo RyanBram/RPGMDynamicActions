@@ -8,7 +8,7 @@ Only a brief explanation is given here, so please see the link for details.
 
 Table of contents
 
-### Approach (near)
+### near (Approaching target)
 
 Get closer to the subject.
 Considering the size of the target and the actor, move to the adjacent position.
@@ -18,7 +18,7 @@ In addition, the destination is automatically adjusted according to the "positio
 ```
 ![Image](https://newrpg.up.seesaa.net/image/20200320_near.gif)
 
-### Return
+### return
 
 It returns to the original position (home position).
 Damage processing etc. is also executed at the timing when this is executed.
@@ -34,7 +34,7 @@ By the way, the pose at this time uses the escape motion. If you don't like it, 
 
 As I wrote in "Basic usage", the actor will return to its original position even if this is not specified. However, if the skill user is an enemy, it will not return automatically, so it is recommended to specify it properly.
 
-### Crash
+### crash
 
 Similar to approaching, but this moves until it overlaps the target.
 As the name suggests, it can be used for body crushing.
@@ -43,7 +43,7 @@ As the name suggests, it can be used for body crushing.
 ```
 ![Image](https://newrpg.up.seesaa.net/image/20200320_crash.gif)
 
-### Back
+### back
 
 Move behind the subject.
 The destination is just the opposite of "near".
@@ -52,7 +52,7 @@ The destination is just the opposite of "near".
 ![Image](https://newrpg.up.seesaa.net/image/20201005_back.gif)
 ```
 
-### Pierce
+### pierce
 
 It moves from the current location to the specified X coordinate so as to penetrate (pass) the target.
 If you do not specify the X coordinate, it will move to the edge of the screen.
@@ -81,7 +81,7 @@ ex = defaultX --100 // Move to the target X coordinate --100
 
 Note that this type is not weighted unlike other mobile templates. This is because it is supposed to play animations that pass each other. You need to use wait and delay to get the timing right.
 
-### StepForward
+### stepForward
 
 Take one step forward.
 ```
@@ -89,7 +89,7 @@ Take one step forward.
 ```
 ![Image](https://newrpg.up.seesaa.net/image/20200320_stepForward.gif)
 
-### StepBack
+### stepBack
 
 Take a step back.
 ```
@@ -97,7 +97,7 @@ Take a step back.
 ```
 ![Image](https://newrpg.up.seesaa.net/image/20200320_stepBack.gif)
 
-### Home
+### home
 
 Return to home position.
 Similar to the "return" type, but this one simply moves.
@@ -107,7 +107,7 @@ Similar to the "return" type, but this one simply moves.
 ```
 ![Image](https://newrpg.up.seesaa.net/image/20200320_home.gif)
 
-### Jump
+### jump
 
 Move while drawing a parabola.
 At that time, a shadow will be displayed at your feet. (It can be erased in the settings.)
@@ -136,7 +136,7 @@ arcY = -200 // Parabola with height 200
 
 See Basic usage for details.
 
-### Roll
+### roll
 
 Make one full turn forward (counterclockwise for actors, clockwise for enemies).
 ```
@@ -159,7 +159,7 @@ frame = 10 // Move in 10 frames
 "* = 5" means the original value x 5.
 If you want to rotate in the reverse direction, you can make the value negative.
 
-### Revolve ver1.04
+### revolve (ver1.04)
 
 Performs a circumferential movement.
 Unlike the Dynamic Animation template of the same name, Butler returns to its original position.
@@ -195,7 +195,7 @@ In RPG Maker MZ, the function to change the position of the animation to "overhe
 ```
 ![Image](https://newrpg.up.seesaa.net/image/20201005_head.gif)
 
-### Foot ver1.09
+### foot (ver1.09)
 
 Move towards the target's feet.
 ```
@@ -204,7 +204,3 @@ Move towards the target's feet.
 <D-Motion: return /> // Return
 ```
 ![Image](https://newrpg.up.seesaa.net/image/20201005_foot.gif)
-
-＞ Return to
-DynamicMotion MZ Plugin ＞Return to DynamicMotion Plugin ＞ Return to
-RPG Maker MZ & MV Table of Contents
