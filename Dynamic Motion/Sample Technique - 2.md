@@ -10,7 +10,8 @@ You can use it as it is or modify it.
 It collides with the enemy with a rider kick-like behavior.
 
 `id=107（無属性/単体2）)` is used for the animation, but you can use it as you like.
-![Image](image.gif)
+
+![Image](https://newrpg.up.seesaa.net/image/20200323_bakuretsu.gif)
 ```
 // 自動前進しない
 <D-Setting:NoStep>
@@ -56,8 +57,10 @@ wait = 10
 ### Zoom Attack DynamicMotion ver1.02 (2020/03/29)
 
 While attacking, gradually zoom toward the target.
+
 *) The description has been simplified due to the template of zoom processing. (2020/03/29)
-![Image](image.gif)
+
+![https://newrpg.up.seesaa.net/image/20200329_zoomB.gif)
 ```
 <D-Motion:near&zoomB/> // 対象にズーム
 <D-Motion:attack/> // 武器振り
@@ -70,11 +73,11 @@ Note that these processes automatically track even if the zoom target is moving.
 ### Sliding (2020/03/24)
 
 Spin the enemy by sliding.
-![Image](image.gif)
+![Image](https://newrpg.up.seesaa.net/image/20200324_sliding.gif)
 
 Set the position of the animation to the skill to `foot`.
 Also, an animation for sand smoke is required separately. The example below uses the `Earth1` pattern. The position is `foot`. It is natural to set the composition method to `Normal`.
-![Image](image.gif)
+![Image](https://newrpg.up.seesaa.net/image/20200324_sliding_smoke.JPG)
 ```
 // 90度回転して体を地面へ
 <D-Motion:wait>
@@ -126,7 +129,7 @@ frame = 5
 
 Randomly tramples the enemy.
 In the example, the range is set to `Random 4 enemies`, but it works fine even if you use `Whole enemies`.
-![Image](image.gif)
+![Image](https://newrpg.up.seesaa.net/image/20200325_ultraJump.gif)
 
 Aim at the head by setting the animation set for the skill to `overhead`.
 In the example, `2: Strike / Effect` is changed overhead.
@@ -160,15 +163,18 @@ damageAll = false // ダメージ表示は個別に任せる
 By applying this, you can also create techniques such as hitting the body in order.
 Please note that timing adjustment is a little difficult. Please be careful about the deficit part.
 
-### Withdrawal (2020/03/31)
+### Cross Slash (2020/03/31)
 
-Shoot a slash while passing by the target.
+Perform a slash while passing by the target.
 The angle of the slash also changes depending on the angle with the target.
-![Image](image.gif)
+
+![Image](https://newrpg.up.seesaa.net/image/20200331_harainuke.gif)
 
 Make a left-facing slash as shown below.
 This is possible by rotating `6: Slash / Physical` by 45 degrees in a batch setting.
-![Image](image.gif)
+
+![Image](https://newrpg.up.seesaa.net/image/20200331_harainuke_animation.JPG)
+
 ```
 <D-Setting:NoStep> // 自動前進禁止
 
@@ -202,7 +208,9 @@ This is a standard function of JavaScript.
 Cut it while passing by the target.
 Random slashing is played while changing the angle.
 The animation set for the skill is a different color tone of `6: Slash / Physics`.
-![Image](image.gif)
+
+![Image](https://newrpg.up.seesaa.net/image/20200403_sippuu.gif)
+
 ```
 <D-Setting:NoStep> // 自動前進禁止
 
@@ -239,7 +247,8 @@ Hit while attracting the enemy.
 The skill is set to just a batting animation.
 In addition, an animation for suction is required.
 In the example, based on `102: Darkness / Single 2`, the composition method is changed to `Addition` in the batch setting.
-![Image](image.gif)
+
+![Image](https://newrpg.up.seesaa.net/image/20200406_renkiken1.gif)
 ```
 // 自身に吸引アニメを表示
 <D-Animation>
@@ -273,7 +282,9 @@ It is confusing, but if you change the motion target, `a` becomes the motion tar
 *) Dynamic Motion ver1.021 or later is required.
 Speaking of Nekiken, it is a whole skill in the first place. Of course I have prepared it properly.
 *) The original story is Romancing SaGa 3.
-![Image](image.gif)
+
+![Image](https://newrpg.up.seesaa.net/image/20200406_renkiken.gif)
+
 ```
 // 自身に吸引アニメを表示
 <D-Animation>
@@ -316,11 +327,13 @@ The point is to match the values ​​of `performerDelay` and `nextDelay`. This
 It's a little confusing, but `performerDelay` is the time difference when there are multiple motion targets.
 `NextDelay` is `time difference to display animation for each target` and `time difference for action subject to execute motion for each target`.
 
-### Alternate sword (2020/04/10)
+### Illussion sword (2020/04/10)
 
 *) Dynamic Motion ver1.03 or later is required.
- Cut into pieces while splitting up.
- ![Image](image.gif)
+
+Cut into pieces while splitting up.
+
+![Image](https://newrpg.up.seesaa.net/image/20200410_bunshin.gif)
 ```
 <D-Setting:NoStep>
 <D-Motion:near/>
@@ -358,7 +371,8 @@ The position is changed momentarily every 2/60 seconds in the red part.
 Change the image of Butler.
 It can be used for literal transformation techniques, but it can also be used for adding motion patterns.
 Also, the enemy can change the image in the same way.
-![Image](image.gif)
+
+![Image](https://newrpg.up.seesaa.net/image/20200510_trans.gif)
 ```
 // グラフィックを変更して接近
 <D-Motion:near>

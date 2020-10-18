@@ -12,26 +12,30 @@ Arrows are not included in the standard material of Tsukuru MV, but they are inc
 *) Due to the rules of the Maker series, only regular MV users can use it.
 
 Animations (img / animations)
+
 *) With a piercing pattern
-![Image](image.gif)
+
+![Image](https://newrpg.up.seesaa.net/mv/Arrow.png)
 
 Weapon (img / system)
+
 *) Except for the upper right bow
-![Image](image.gif)
+
+![Image](https://newrpg.up.seesaa.net/mv/Weapons1.png)
 
 Now create an arrow animation and you're ready to go.
 Even if you say creation, the movement is controlled by a plug-in, so you can simply paste the pattern in the center of the screen.
 The size is too small in the initial state, so it may be better to enlarge it to about 150%.
-![Image](image.gif)
+![Image](https://newrpg.up.seesaa.net/image/20200328_arrow.JPG)
 
 In the example, I tried to make the 1st to 4th frames the 1st pattern and the 5th to 8th frames the 2nd pattern (the one that stabbed).
 
-### arrow
+### Bow attack
 
 First, shoot an arrow normally.
 If you want to use it as a normal attack, you can link it to the weapon with the official plugin "WeaponSkill.js".
 There is a problem of what to do with enemy characters who do not have weapons.
-![Image](image.gif)
+![Image](https://newrpg.up.seesaa.net/image/20200329_arrow.gif)
 ```
 <D-Motion:attack/>
 <D-Animation:shot&lookCourse>
@@ -47,7 +51,7 @@ I also added a hit effect as appropriate, but please feel free to use that area.
 ### Rapid fire
 
 It is a rapid fire. I just shoot an arrow.
-![Image](image.gif)
+![Image](https://newrpg.up.seesaa.net/image/20200329_rensya.gif)
 ```
 // １０連射（モーション）
 <D-Motion:attack>
@@ -74,7 +78,7 @@ If you change the value of "repeat", the number of arrows will also change. At t
 Shoot an arrow in the sky and attack with an arrow that falls like rain.
 The animation of the arrow is changed so that it sticks to the target in 12 frames.
 Since there is a flight time, it is more natural to make it longer.
-![Image](image.gif)
+![Image](https://newrpg.up.seesaa.net/image/20200328_arrowRain.gif)
 ```
 // 弓を引く
 <D-Motion:attack>
@@ -101,12 +105,14 @@ arcY = -500 // 放物線の高さ
 Fires wind arrows in rapid succession.
 The orbit takes a parabola of random height.
 Furthermore, the number of arrows increases for every 20 magical power (mat) increase.
-![Image](image.gif)
+
+![Image](https://newrpg.up.seesaa.net/image/20200328_windDart.gif)
 
 By the way, the wind arrow is created as follows. (Click to enlarge)
 It is assumed that the target will be reached in 8 frames.
 It doesn't matter if it's a ball of fire, not just an arrow of the wind.
-![Image](image.gif)
+
+![Image](https://newrpg.up.seesaa.net/image/20200326_windDart_animation.JPG)
 ```
 // 弓を引く
 <D-Motion:attack>
@@ -137,7 +143,7 @@ arcY = -150 + Math.random() * 300 // -150～150
 ### Thousand needles (2020/4/9)
 
 A large number of arrows appearing from around the enemy will pierce you.
-![Image](image.gif)
+![Image](https://newrpg.up.seesaa.net/image/20200409_harisen.gif)
 ```
 // 連射（モーション）
 <D-Motion:attack>

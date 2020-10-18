@@ -1,16 +1,17 @@
 # DynamicAnimation & Motion sample technique (external cooperation) [RPG Maker MV & MZ plug-in]
 
 This page is DynamicAnimation and DynamicMotion is part of the description of the plug-in.
-*) Operation with Tsukuru MZ has also been confirmed.
+
+*) Operation with RPG Maker MZ has also been confirmed.
 
 We will introduce sample techniques in cooperation with external plug-ins.
-Obviously, it will not work unless the introduced plug-in is DL and applied.
-
+Obviously, it will not work unless the related plug-in is downloaded and turned on.
 
 ### Blackout DynamicMotion ver1.07 (2020/06/07)
 
-In cooperation with the color tone change plug-in of the battle screen background of villager A , the background is darkened.
+In combination with [battleback color tone changer plugin](http://rpgmaker-script-wiki.xyz/battle_back_tone_plugin.php) by 村人A, the background is darkened.
 Unlike normal color tones, it maintains the tones of characters and animations.
+
 ![Image](https://newrpg.up.seesaa.net/image/20200607_darkness.gif)
 
 ```

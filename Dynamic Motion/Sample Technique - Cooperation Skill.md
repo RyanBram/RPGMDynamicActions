@@ -1,15 +1,20 @@
 # DynamicAnimation & Motion sample technique (cooperation skill) [RPG Maker MV & MZ plug-in]
-This page is DynamicAnimation and DynamicMotion is part of the commentary.
-*) MZ version ( DynamicAnimationMZ , DynamicMotionMZ ) is also valid.
 
-Romance in romance-I will introduce a sample technique of the combined system.
+This page is DynamicAnimation and DynamicMotion is part of the commentary.
+
+*) DynamicAnimationMZ, DynamicMotionMZ is also valid.
+
+Romance in romance - I will introduce a sample technique of the combined system.
 As a premise, it is assumed to be used in combination with the following plug-ins.
+
+[NRP_CombinationSkill](http://newrpg.seesaa.net/article/474570191.html)
 
 Introduction of this, it will be possible to acquire actors who will participate in the union technique with the "$ actor (id)" and "$ cs (id)" functions.
 
 ### X slash
 Slash the enemy so that the two actors intersect.
-![Image](image.gif)
+
+![Image](https://newrpg.up.seesaa.net/image/20200411_XSlash.gif)
 
 The following is an example with ID = 1 (Alex) and 2 (Brian).
 ```
@@ -71,10 +76,11 @@ Convenient.
 The "X-shaped animation" part is playing two "7: Slashing / Effects" at different angles.
 Of course, you can also make an X-shaped slashing animation normally.
 
-### Total attack (2020/5/2)
+### All out attack (2020/5/2)
 
 We will make a total attack with everyone.
-![Image](image.gif)
+
+![Image](https://newrpg.up.seesaa.net/image/20200502_AllAttack.gif)
 
 ```
 // 全員を合体技の対象に
@@ -123,9 +129,10 @@ If you do not cut it, the damage will be displayed when the first person returns
 
 I wondered if I could do something like a persona in combination with the "forced combat action" area ...
 
-### Combined magic (updated 2020/09/07)
-Unleash magic with multiple people.
-![Image](image.gif)
+### Magic Combo (updated 2020/09/07)
+Perform magic by multiple actors.
+
+![Image](https://newrpg.up.seesaa.net/image/20200907_bomb.gif)
 
 ```
 // 参加者指定
@@ -165,7 +172,8 @@ Everyone shoots all at once.
 The animation is a reduced version of "82: Water / Single 2".
 I'm also playing with the animation triggered by <D-Animation: spell>.
 As usual, change to your favorite animation. Don't forget the value of the landing frame (arrival).
-![Image](image.gif)
+
+![Image](https://newrpg.up.seesaa.net/image/20200504_bouble.gif)
 
 ```
 <CS_Battlers:1,2,3,4>
@@ -201,6 +209,7 @@ sy = $cs(r%4+1).y - $cs(r%4+1).height/2
 arrival = 7
 </D-Animation>
 ```
-"$ Css (r% 4 + 1)""$ Cs (r% 4 + 1)" refers to the coordinates of the participants in the coalescing technique.
-"R% 4 + 1" means "the remainder of dividing the number of repeats (starting from 0) by 4".
-In other words, by referring to "$ cs (1) to $ cs (4)" while patrolling, animation is fired from each position.
+
+`$cs(r%4+1)` refers to the coordinates of the participants in the coalescing technique.
+`r%4+1` means the remainder of dividing the number of repeats (starting from 0) by 4.
+In other words, by referring to `$cs(1)～$cs(4)` while patrolling, animation is fired from each position.

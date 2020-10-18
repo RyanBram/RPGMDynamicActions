@@ -13,7 +13,6 @@ For example, if you have the following definition:
 ex = b.x + 200 // 終点Ｘ座標
 </D-Motion>
 ```
-
 It moves to the right 200 pixels of the target.
 However, there is one problem.
 
@@ -32,7 +31,7 @@ By applying this, only the necessary part can be flipped left and right.
 Also, if you want to invert the vertical coordinates in the front view etc.,
 perform the same operation on the Y coordinate side.
 
-
+![image](https://newrpg.up.seesaa.net/image/20200322_mirroring.gif)
 
 As you can see, it now moves to the left of the target.
 
@@ -50,7 +49,7 @@ arcY /= 2 // テンプレートの設定値 / 2
 
 Please note that these operations are only "string concatenation" to the JavaScript expression.
 
-What this means is that the template setting is "ex = bx + 100".
+What this means is that the template setting is "ex = b.x + 100".
 If the input in the memo field is as follows ...
 ```
 <D-Motion:jump>
@@ -58,9 +57,9 @@ ex *= 2
 </D-Motion>
 ```
 
-The content after concatenation will be "ex = bx + 100 * 2".
+The content after concatenation will be `ex = b.x + 100 * 2`.
 In other words, only the last 100 parts are multiplied.
-To apply it to the whole, set the plug-in setting value as "ex = (bx + 100)" and it's OK.
+To apply it to the whole, set the plug-in setting value as `ex = (b.x + 100)` and it's OK.
 There is no problem with addition and subtraction, but be careful with multiplication and division.
 
 ## & symbol for combining Template
@@ -69,7 +68,7 @@ Templates can be combined by the `&` symbol.
 For example ...
 `<D-Motion:near&jump/>`
 
-And, the definition is combined by connecting the approach type `near` and `jump` types templates with "&". Approach the target while jumping.
+And, the definition is combined by connecting the approach type `near` and `jump` types templates with `&`. Approach the target while jumping.
 
 Actually, the values of the template definition registered in the plugin are combined.
 Note that if there is a parameter conflict, the following definition takes precedence.
@@ -107,7 +106,7 @@ motion = wait // 待機モーション
 The definition of `motion = walk` in the near type has been overwritten with `motion = wait`.
 Please note that it is natural that you cannot take two motions at the same time.
 
-There is no limit to the number that can be fused, and 3 or more are possible.
+There is no limit to the number that can be combined, and 3 or more are possible.
 
 ## <D-Setting> function
 
@@ -130,7 +129,7 @@ However, it is not always necessary to use it forcibly. If you use templates suc
 
 ### Immortal (Immortal control ver1.04)
 
-By using the immortal state, you can control the production. Set the state to be used in the plug-in parameter in advance .
+By using the immortal state, you can control the production. Set the state to be used in the plug-in parameter in advance.
 `<D-Setting:Immortal>`
 
 As a result, the death judgment will not be made until the skill production is completed. You can prevent the opponent from dying during the continuous hit technique and the production will be missed.

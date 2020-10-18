@@ -12,7 +12,8 @@ The ones that have already been introduced on another page are also summarized h
 
 First of all, from the basic form.
 I think that just copying this and changing the animation will create a certain atmosphere.
-![Image](image.gif)
+
+![Image](https://newrpg.up.seesaa.net/image/20200314_NoStep.gif)
 ```
 <D-Setting:NoStep> // 自動前進禁止
 <D-Motion:near/> // 対象へ接近
@@ -24,7 +25,8 @@ I think that just copying this and changing the animation will create a certain 
 ### Jump attack
 
 Since it's a big deal, I'll stick to timing adjustment.
-![Image](image.gif)
+
+![Image](https://newrpg.up.seesaa.net/image/20200321_jumpAttack.gif)
 ```
 <D-Setting:NoStep> // 自動前進禁止
 <D-Motion:near&jump> // 接近＆ジャンプ
@@ -43,8 +45,10 @@ This adjusts the weapon to swing down while descending.
 
 ### Rolling attack
 
-In cooperation with the effect range expansion plug-in , it attacks on a straight line. Since the movement is far from humans, it is more for the enemy.
-![Image](image.gif)
+In cooperation with the effect range expansion plug-in , it attacks on a straight line.
+Since the actors position are separated, it is more suitable for using against the enemy.
+
+![Image](https://newrpg.up.seesaa.net/image/20200321_rolling.gif)
 ```
 <RangeEx:line> // 直線を対象に
 <D-Setting:NoStep> // 自動前進禁止
@@ -64,7 +68,8 @@ The number of rotations is specified by "rotation". By default, it rotates forwa
 
 ### Meteor sword
 Use a large amount of animation and repeat weapon swings to make it look like it.
-![Image](image.gif)
+
+![Image](https://newrpg.up.seesaa.net/image/20200321_ryuusei.gif)
 ```
 <D-Animation:randomAll/> // アニメーションの大量生成
 <D-Motion:attack> // 武器振り
@@ -74,11 +79,12 @@ motionFrame = 1 // 1*3=3フレーム
 ```
 Please note that a single motion takes 3 patterns of time. "MotionFrame = 1" is the time of the 3 frame part of the animation. It's repeated 5 times, so it's a total of 15 frames.
 
-### Midareuchi (Updated on May 18, 2020)
+### Midare Uchi (Updated on May 18, 2020)
 
-It is the familiar "Midareuchi" in the FF series.
+It is the familiar "Barrage" in the FF series.
 The range is "Random 4 enemies".
-![Image](image.gif)
+
+![Image](https://newrpg.up.seesaa.net/image/20200316_midare.gif)
 ```
 <D-Motion:every&attack> // 全対象に武器振り
 motionFrame = 2 // 2*3=6フレーム
@@ -90,7 +96,8 @@ nextDelay = 6 // 繰り返し間隔
 ```
 It's a little complicated, but you can also display the damage for each hit.
 *) It has been greatly simplified by the damage type template of Dynamic Animation ver1.09.
-![Image](image.gif)
+
+![Image](https://newrpg.up.seesaa.net/image/20200321_midare2.gif)
 ```
 // 対象毎に武器振り
 <D-Motion:every&attack>
@@ -110,7 +117,8 @@ Damage processing is performed after the animation is displayed by using the dam
 
 Use the immortal setting to prevent enemies from dying during a series of attacks.
 In the example below, the number of consecutive skills is set.
-![Image](image.gif)
+
+![Image](https://newrpg.up.seesaa.net/image/20200511_immortal.gif)
 ```
 // 不死身設定
 <D-Setting:Immortal>
@@ -137,10 +145,10 @@ damageAll = true // 全体ダメージ処理
 ```
 This time, the range is set to a single unit, but it works fine even if you use "4 random enemies".
 
-### throw
+### Throw
 
 Please throw like this.
-![Image](image.gif)
+![Image](https://newrpg.up.seesaa.net/image/20200321_throw.gif)
 ```
 <D-Motion:swing/> // 振る
 <D-Animation:shot> // アニメーションを飛ばす
@@ -152,10 +160,11 @@ arrival = 5 // 到達フレーム
 ```
 The arrival frame must match the content of the animation.
 
-### For friends
+### Friendly skill
 
 For recovery skills and items.
-![Image](image.gif)
+
+![Image](https://newrpg.up.seesaa.net/image/20200318_ifOther.gif)
 ```
 <D-Setting:NoStep> // 前進しない
 <D-Motion:stepForward&ifSelf/> // 対象が自分なら一歩前進
@@ -170,7 +179,8 @@ If you are the target, you only have to take a step forward.
 
 Normally, when this plugin is applied to a normal attack, the second shot of dual wield will not be displayed.
 However, depending on the setting, it is possible to produce a second shot.
-![Image](image.gif)
+
+![Image](https://newrpg.up.seesaa.net/image/20200330_dualAttack.gif)
 ```
 <D-Setting:NoStep> // 自動前進禁止
 <D-Motion:near/> // 接近

@@ -41,13 +41,13 @@ Read the definition of DynamicAnimation & Motion from txt ( details )
 
 Battler works by calling the template from the note tag of the skill (item). The following is an example of calling a near template.
 ```
-<D-Motion: near />
+<D-Motion:near/>
 ```
 
-Furthermore, parameters can be added and overwritten for the template.
+Furthermore, specific parameters can be added to overwrite the template.
 ```
 <D-Motion:near>
-frame = 8 // moving time
+frame = 8 // 移動時間
 </D-Motion>
 ```
 
@@ -55,7 +55,8 @@ The minimum usage is as above, but there are numerous parameters.
 First of all, it will be easy to understand from the "Basic usage" page below.
 After that, it is smooth to refer to "Explanation of template" and "List of plug-in parameters".
 
-If it is troublesome, the "Sample Technique" page is recommended. It's quick because you can make skills almost by copying.
+If it is troublesome, the "Sample Technique" page is recommended.
+It's quick because you can make skills almost by copying.
 
 - [Basic usage](https://github.com/RyanBram/RPGMDynamicActions/blob/main/Dynamic%20Motion/Basic%20Usage.md)
 - Template description
@@ -68,19 +69,20 @@ If it is troublesome, the "Sample Technique" page is recommended. It's quick bec
   - Template definition list (separate window)
   - Other functions, etc. (separate window)
 - Sample technique
-  - Sample technique ① (separate window)
-  - Sample technique ② (separate window)
-  - Sample technique (bow) (separate window)
-  - Sample technique (magic) (separate window)
-  - Sample technique (combination technique) (separate window)
-  - Sample technique (external cooperation) (separate window)
-
+  - Sample technique - 1 (separate window)
+  - Sample technique - 2 (separate window)
+  - Sample technique - bow (separate window)
+  - Sample technique - magic (separate window)
+  - Sample technique - cooperative skill (separate window)
+  - Sample technique - combination with other plugin (separate window)
+  - Sample technique - DynamicAnimation & DynamicMotion on map (separate window)
 ## About competition ver1.04
 
 From ver1.04, you can change the display priority .
 However, this feature has a large impact and can be turned off in the event of conflicts or other issues.
 
-For example, "YEP_BattleEngineCore" has a similar function. If there is a conflict, it is safer to turn off the function and leave it to that.
+For example, "YEP_BattleEngineCore" has a similar function.
+If there is a conflict, it is safer to turn off the function and leave it as is.
 
 ## Change log
 
