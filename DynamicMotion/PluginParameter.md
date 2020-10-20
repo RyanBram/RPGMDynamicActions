@@ -1,10 +1,10 @@
-## DynamicMotion plug-in parameter list [RPG Maker MV plug-in]
+## Plug-in Parameter list
 This page is part of the description of the Dynamic Motion plug-in .
 
-I will summarize the plug-in parameters.
+We will summarize the plug-in parameters.
 Since there are a lot of them, it may be better to refer to them as needed rather than forcibly reading them all at once.
 
-In addition, everything included under "Template parameters" here is the same as the description made in the memo column.
+In addition, everything included under "Template parameters" here is the same as the description made in the note tag.
 For example, in the case of "wait", the description is as follows. Please use the alphabet to specify.
 ```
 <D-Motion>
@@ -14,7 +14,7 @@ wait = 5
 
 ## Overall parameters
 
-#### templateList (list of pre-made templates)
+#### templateList
 
 A list of templates with predefined motion settings.
 Click to display a list of templates.
@@ -23,24 +23,24 @@ In a way, it's the core of this plugin.
 
 By the way, the items in the list can be sorted by dragging the mouse.
 
-#### shortTagName (Abbreviated tag name  ver1.03)
+#### shortTagName
 
 Allows the tag name to be omitted in the specified string.
 For example, `<D-Motion:near/>` can be abbreviated as `<dm:near/>`.
 
-#### shortSettingTagName (Omitted setting tag name ver1.03)
+#### shortSettingTagName
 
 Allows the setting tag name to be omitted in the specified character string.
 For example, `<D-Setting:NoStep>` can be omitted as `<ds:NoStep>`.
 
-#### setStartMotion (Start motion setting)
+#### setStartMotion
 
 Set the presence or absence of motion to be executed when using an attack, skill, or item.
 0: Always Yes, 1: Always No, 2: No Only when the motion is specified
 
 Initial value is 2.
 
-#### setStepForward (One step forward setting)
+#### setStepForward
 
 Set whether to take a step forward when using attacks, skills, or items.
 0: Always Yes, 1: Always No, 2: No Only when the motion is specified
@@ -48,23 +48,23 @@ Set whether to take a step forward when using attacks, skills, or items.
 Initial value is 0.
 Even if it is 0, if you write `<D-Setting:NoStep>` in the note tag of the skill or item, you will not be able to move forward.
 
-#### defaultDuration (Standard travel time in 1/60 seconds)
+#### defaultDuration
 
 This is the initial value of the travel time when not specified.
 
-#### defaultEnemyMotionDuration (Enemy standard motion time in 1/60 seconds)
+#### defaultEnemyMotionDuration
 
 This is the initial value of the enemy motion time when not specified.
 Normally, the enemy has no motion.
 When using the same skill as the actor, it will be the wait time for the motion.
 If set to 0, there will be no weight.
 
-#### jumpShadow (Shadow display when jumping)
+#### jumpShadow
 
 Whether to display a shadow when jumping.
 A shadow is displayed by default.
 
-#### immortalState (ver1.04)
+#### immortalState
 
 This is the number of the immortal state used for directing control.
 If you enter `<D-Setting:Immortal>`, the death judgment will not be made until the skill production is completed. You can prevent the opponent from dying during the continuous hit technique and the production will be missed.
@@ -72,25 +72,25 @@ If you enter `<D-Setting:Immortal>`, the death judgment will not be made until t
 In the initial state, "3: Immortal" is set, but please create and set a dedicated immortal state as much as possible.
 Since it is added and released internally, even those used for other purposes will be released at the same time.
 
-## Overall display priority related parameters ver1.04
+## Overall display priority related parameters
 
 This item is related to the overall display priority.
 By specifying the Z coordinate, you can change the priority at which Butler is displayed on the screen.
 *) The larger the Z coordinate, the more it will be displayed on the front.
 
-#### usePriority (Enable display priority)
+#### usePriority
 
 Enables the display priority change function.
 It is enabled by default, but if you don't need it, set it to false.
 
 For example, "YEP_BattleEngineCore" has a similar function. If there is a conflict, it is safer to turn off the function and leave it to that.
 
-#### battlerZ (Battler's Z coordinate)
+#### battlerZ
 
 This is the initial value of the Battler's Z coordinate (display priority).
 The initial value is 3. If you change the Z coordinate in the individual description, you can make fine adjustments for each skill.
 
-#### opponentSideZ (Z coordinate of the enemies)
+#### opponentSideZ
 
 At the time of action, change the Z coordinate of the opponent side.
 
@@ -112,10 +112,10 @@ When the animation is executed, the value is set before the repeat.
 
 #### name
 
-This is a memo for identification. Please give it a descriptive name.
+This is a note for identification. Please give it a descriptive name.
 Actually, you can use it even if you specify this in the note tag of the skill item.
 
-#### templateId (Template ID)
+#### templateId
 
 The identifier used to call the template.
 Specify this ID in the note tag of the skill item.
@@ -134,11 +134,11 @@ If you specify "auto", it waits for the end of this motion.
 
 Also, if you specify "autoMove", only the motion movement will wait for the end.
 
-#### repeat (Number of repeats)
+#### repeat
 
 The number of times the motion is repeated.
 
-#### performer (Motion target)
+#### performer
 
 Changes the motion display to the specified target.
 You can specify a battler (and its sprites) or its array.
@@ -146,7 +146,7 @@ You can specify a battler (and its sprites) or its array.
 Normally, the target of the motion is the performer of the skill.
 For example, if you specify `b` or `b._battler`, the target of the skill will be the target of motion.
 
-#### noReturn (Don't return to home position)
+#### noReturn
 
 Specify true to prevent the actor from automatically returning to the home position.
 *) Depending on the specifications of Maker MV, the actor will automatically return to the specified position after the action is completed.
@@ -154,7 +154,7 @@ Specify true to prevent the actor from automatically returning to the home posit
 It is supposed to be combined with other unlocking skills by common events and continuous moves using states.
 To cancel, specify false.
 
-#### battlerImage (Battler image ver1.04)
+#### battlerImage
 
 Temporarily changes the battler image to the specified file name (no extension required).
 It is effective for both actors and enemy characters.
@@ -182,8 +182,6 @@ If this condition is not met, no motion will be performed.
 Description example: When the actor is the actor.
 `condition = a.isActor()`
 
-*) From ver1.08, it has been changed to a repeat item.
-
 #### position
 
 The target position of the motion. 0: overhead, 1: center, 2: feet, 3: screen.
@@ -193,37 +191,37 @@ The target position of the motion. 0: overhead, 1: center, 2: feet, 3: screen.
 The interval at which the motion is repeated.
 The value corresponds to one frame of the animation.
 
-#### rate (Drawing rate )
+#### rate
 
 It is the display time of one motion frame.
 The initial value is 4. In other words, the drawing is updated every 4/60 seconds.
 
-#### every (Repeat for each subject)
+#### every
 
 If ON, the motion is repeated for each target.
 
-#### nextDelay (Time difference for each target)
+#### nextDelay
 
 This is the time difference between the "motion target" and the action when there are multiple "skill target".
 It is meaningless unless "Repeat for each target" is turned ON.
 
-#### performerDelay (Time difference for each motion target ver.1.022)
+#### performerDelay
 
 This is the time difference between each person performing an action when there are multiple "motion target persons".
 
-#### mirror (Invert Left-right) 
+#### mirror
 
-If set to true, the butler display will be flipped horizontally.
+If set to true, the battler display will be flipped horizontally.
 Note that until you specify false after that, it will remain the same even after the action is completed.
 
-#### damage (Damage processing)
+#### damage
 
 If true is specified, damage processing will be performed without waiting for the end of all motions.
 This is processed only once.
 
 In addition, when combined with multiple attacks as a whole, the behavior is suspicious because the damage is not displayed. It is recommended because it will be stable if it is displayed all at once with the damage timing adjustment plug-in .
 
-#### damageAll (Damage processing for all)
+#### damageAll
 
 If true is specified, damage processing will be performed without waiting for the end of all motions.
 All processing is done by specifying it once.
@@ -232,11 +230,11 @@ I think that it is more stable than the above "damage processing" because it is 
 By the way, this is set by default in the `return` type template.
 This is why the damage is displayed before the battler finishes returning.
 
-#### noShadow (Hide shadow)
+#### noShadow
 
 If set to true, the shadow will be erased.
 
-#### playSe (Play Sound effect ver.1.02)
+#### playSe
 
 Plays the specified sound effect (SE).
 There are two ways to specify, "1. Specify only the file name" and "2. Specify details (volume, pitch, phase)".
@@ -247,7 +245,7 @@ There are two ways to specify, "1. Specify only the file name" and "2. Specify d
 
 For example, it is supposed to be used to add a jump sound to a jump template.
 
-#### commonEvent (ver1.01)
+#### commonEvent
 
 Executes the common event with the specified number.
 The behavior is like calling parallel processing only once.
@@ -255,11 +253,11 @@ The behavior is like calling parallel processing only once.
 You can freely change the color tone of the screen, shake, display the picture, change the BGM, etc.
 However, please note that the progress will not stop even if you display a message or apply a wait.
 
-#### script (ver1.01)
+#### script
 
 Executes the specified script.
 
-#### plugin (Plug-in command ver1.07)
+#### plugin
 
 Executes the specified plug-in command.
 
@@ -275,34 +273,34 @@ End point related parameters.
 By the way, unlike Dynamic Animation, there is no parameter for the start point.
 This is because Butler's current location is always the starting point.
 
-#### ex (End point X coordinate)
+#### ex
 
-#### ey (End point Y coordinate)
+#### ey
 
 The X and Y coordinates of the end point.
 If you enter this, the butler will move from the start point to the end point.
 
-#### airY (End point aerial Y coordinate)
+#### airY
 
 The aerial Y coordinate of the end point.
 Butler moves with the end point in the air.
 
 When combined with arcY below, you can create an action that jumps up and stands still in the air.
 
-#### duration (Moving time in 1/60 seconds) 
+#### duration 
 
 The time it takes to move.
 
-#### frame (Moving time in frame)
+#### frame
 
 The time it takes to move.
 This is 4/60 seconds as standard.
 In other words, it is the same as an animation frame, so it is convenient when you want to link animation and movement.
 If you enter both `duration` above, this will take precedence.
 
-#### arcX (Parabolic width)
+#### arcX 
 
-#### arcY (Parabola height)
+#### arcY
 
 The width and height of the parabola.
 Note that the vertical width is minus upwards!
@@ -313,7 +311,7 @@ Jump operation is performed by setting a negative value for arcY.
 
 Motion related parameters.
 
-#### motion (Motion name)
+#### motion
 
 The name of the motion to execute.
 Example: walk, wait, etc.
@@ -342,14 +340,14 @@ List of motion
 
 If you want to know the specific motion, you may refer to "Side View Character Standard" in RPG Maker MV Help.
 
-#### motionDuration (Motion time in 1/60 seconds)
+#### motionDuration 
 
-The time required for motion.
+The time required for motion. (Motion time in 1/60 seconds)
 
-#### motionFrame (Motion time in frame)
+#### motionFrame 
 
-The time required for motion (animation frame).
-If specified at the same time as `motionDuration`, this will be given priority.
+The time required for motion (Motion time in frame).
+If specified alongside `motionDuration`, this will be given priority.
 
 #### motionPattern
 
@@ -366,12 +364,14 @@ Normally it is 0, but if you specify 1 or 2, it will start from that pattern.
 
 If you want to fix the motion with a specific pattern, you need to set it at the same time as the above "Motion pattern".
 
-#### weaponId (Weapon ID in database)
+#### weaponId 
 
-Weapon ID used during motion. The displayed weapon type changes depending on the specified ID.
-If you specify this, you can also display weapons that are not equipped. Try making a magic sword-like technique.
+Weapon ID used during motion (Weapon ID in database).
+The displayed weapon type changes depending on the specified ID.
+If you specify this, you can also display weapons that are not equipped.
+Try making a magic sword-like technique.
 
-#### weaponType (ver1.02)
+#### weaponType
 
 Weapon type used during motion.
 Use this if you want to specify the weapon type directly instead of the ID.
@@ -381,22 +381,22 @@ Use this if you want to specify the weapon type directly instead of the ID.
 This item is calculated every 1/60 second.
 There are many items for advanced users.
 
-In the following items, you can refer to the elapsed time as "t" and the end time as "et".
+In the following items, you can refer to the elapsed time as `t` and the end time as `et`.
 
 ### Real Time
 
-#### dx (Dynamic X coordinates [advanced] ver1.03)
+#### dx
 
-#### dy (Dynamic Y coordinate [advanced] ver1.03)
+#### dy
 
-Set the formula that defines the XY coordinates every 1/60 second.
+Set the formula that defines the X and Y coordinates every 1/60 second.
 
 Normally, if this item is not set, the coordinates will be calculated by the formula from the start point to the end point. If you set this item, it will be ignored and the calculation will be performed using your own formula.
 In theory, you can create as many complex movements as you like, but it's for advanced users only.
 
-#### addX (X coordinate correction ver1.03)
+#### addX
 
-#### addY (Y coordinate correction ver1.03)
+#### addY
 
 It is a value to be added to the X and Y coordinates.
 After all the position calculation is completed, the correction is applied at the end.
@@ -410,18 +410,18 @@ It is the enlargement ratio of the width and height. 1.0 is the standard.
 #### rotation
 
 The turnover rate. Specify radians instead of frequencies.
-"Math.PI * 2" corresponds to 360 degrees.
+`Math.PI * 2` corresponds to 360 degrees.
 
 #### opacity
 
 Opacity 255 is opaque, 0 is transparent.
 
-#### color (Color tone ver1.05)
+#### color
 
 Changes the color tone in the specified array.
 Example: [255, 255, 255, 255] (in order of red, green, blue, strength)
 
-#### z) (Z coordinate display priority ver1.04)
+#### z
 
 Change the Z coordinate (display priority) of the battler.
 The initial value is 3. However, it is a specification that the priority of the other side is changed to 2.5 at the time of action.
@@ -429,26 +429,26 @@ When set to 2 or less (in the standard case), the battler to be motioned is disp
 
 *) This function does not work unless "Enable display priority" is turned on. (Alternatively, you can do the same with an external plug-in.)
 
-#### scriptRT (Script (real time) ver1.01)
+#### scriptRT
 
 Executes the specified script in real time.
 
-### Real Time Circle ver1.04
+### Real Time Circle
 
 Items related to real-time circular motion.
 
-#### radiusX (Radius in the X direction)
+#### radiusX
 
-#### radiusY (Radius in the Y direction)
+#### radiusY
 
 The radius of circular motion in the X and Y directions.
 
 If both have the same value, it will be a circle, and if only one is enlarged, it will be an ellipse.
 In addition to this, if you set the lower circular motion angle, the butler will make a circular motion.
 
-#### radX (Angle in the X direction)
+#### radX
 
-#### radY (Angle in Y direction)
+#### radY
 
 Circular motion angles in the X and Y directions.
 2π is one cycle.

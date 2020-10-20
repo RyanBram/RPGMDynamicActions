@@ -1,4 +1,4 @@
-# DynamicMotion User Manual
+# Introduction
 It is a plug-in that freely controls the battle motion when executing the skill.
 
 You can move the battler and perform motions at any time.
@@ -10,14 +10,7 @@ The following is an introductory video.
 
 [INSERT VIDEO HERE]
 
-# Table of contents
-
-- [Introduction method](#introduction-method)
-- [How to Use](#how-to-use)
-- [About competition ver1.04](#about-competition-ver104)
-- [Change log](#change-log)
-
-## Introduction method
+## Download
 
 Download the following two files and throw them into '[Project]\js\plugins'.
 Please turn on the function from the plug-in management of RPG Maker MV.
@@ -39,46 +32,29 @@ Read the definition of DynamicAnimation & Motion from txt ( details )
 
 ## How to Use
 
-Battler works by calling the template from the note tag of the skill (item). The following is an example of calling a near template.
+Battler works by calling the template from the note tag of the skill or item.
+The following is an example how to call `near` template.
 ```
 <D-Motion:near/>
 ```
 
-Furthermore, specific parameters can be added to overwrite the template.
+Furthermore, specific parameters can be added to overwrite the pre-defined template.
 ```
 <D-Motion:near>
 frame = 8 // 移動時間
 </D-Motion>
 ```
 
-The minimum usage is as above, but there are numerous parameters.
+The minimum usage is as above, but there are numerous parameters that can be customized.
 First of all, it will be easy to understand from the "Basic usage" page below.
 After that, it is smooth to refer to "Explanation of template" and "List of plug-in parameters".
 
 If it is troublesome, the "Sample Technique" page is recommended.
-It's quick because you can make skills almost by copying.
+It's quick because you can make skills almost by just copy-pasting.
 
-- [Basic usage](https://github.com/RyanBram/RPGMDynamicActions/blob/main/Dynamic%20Motion/Basic%20Usage.md)
-- Template description
-  - Mobile template (separate window)
-  - Acting template (separate window)
-  - Display template (separate window)
-  - Control system template (separate window)
-- Other information
-  - List of plug-in parameters (separate window)
-  - Template definition list (separate window)
-  - Other functions, etc. (separate window)
-- Sample technique
-  - Sample technique - 1 (separate window)
-  - Sample technique - 2 (separate window)
-  - Sample technique - bow (separate window)
-  - Sample technique - magic (separate window)
-  - Sample technique - cooperative skill (separate window)
-  - Sample technique - combination with other plugin (separate window)
-  - Sample technique - DynamicAnimation & DynamicMotion on map (separate window)
-## About competition ver1.04
+## Compatibility Issues
 
-From ver1.04, you can change the display priority .
+Since version 1.04, you can change the display priority .
 However, this feature has a large impact and can be turned off in the event of conflicts or other issues.
 
 For example, "YEP_BattleEngineCore" has a similar function.

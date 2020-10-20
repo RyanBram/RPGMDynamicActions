@@ -1,10 +1,11 @@
-# Dynamic Motion on the map [RPG Maker MZ & MV Plugin]
+# Dynamic Motion on the Map
 Launch Dynamic Motion from the map.
 Characters can perform normally difficult movements such as rotation, enlargement, and free movement.
 
 ![Image](https://newrpg.up.seesaa.net/image/20201014_DynamicMotionMap.gif)
 
 The following plugins are required for this plugin to work.
+
 *) This plug-in itself is valid for both MV and MZ.
 
 MZ version
@@ -21,40 +22,35 @@ MV version
 If you register, Dynamic Motion on the map will be enabled.
 Start from the plug-in command of NRP_DynamicAnimationMap .
 
-### Installation method (install)
+## Requirements
 
-Download the following file and throw it into [Project] \ js \ plugins.
-Please turn on the function from the plug-in management of Maker.
+The following plugins need to be placed and activated in [Project]/js/plugins directory.
+Please turn on the function from the plug-in management of RPG Maker.
+
 *) This plug-in is valid for both MV and MZ.
 
-- NRP_DynamicMotionMap.js ver1.01 (2020/10/17)
+- NRP_DynamicMotionMap.js
 
 Please update the following plugins to the latest version.
-*) If there is a discrepancy between the versions, it may not work.
+
+*) If there are discrepancy between the versions, it may not work.
 
 MZ version
-- NRP_DynamicAnimationMZ.js ver1.08 (2020/10/17)
-- NRP_DynamicMotionMZ.js ver1.06 (2020/10/17)
-- NRP_DynamicAnimationMapMZ.js ver1.052 (2020/10/17)
+- NRP_DynamicAnimationMZ.js
+- NRP_DynamicMotionMZ.js
+- NRP_DynamicAnimationMapMZ.js
 
 MV version
-- NRP_DynamicAnimation.js ver1.18 (2020/10/17)
-- NRP_DynamicMotion.js ver1.13 (2020/10/17)
-- NRP_DynamicAnimationMap.js ver1.052 (2020/10/17) 　* Be
+- NRP_DynamicAnimation.js
+- NRP_DynamicMotion.js
+- NRP_DynamicAnimationMap.js　
 
-Make sure to place it lower than the above three plugins.
-
-
-## Sample
-
-![Image](https://newrpg.up.seesaa.net/image/20201015_Beat.gif)
-
-We have prepared a sample specialized for maps, so please refer to it.
-- Map sample
+*) Make sure to place it lower than the above three plugins.
 
 
-## DynamicMotion: New Template
-It is a template that can be set for the skill. See the Dynamic Motion page for existing templates.
+## New Template
+It is a template that can be set for the skill.
+See the Dynamic Motion page for existing templates.
 The following are registered in the common template list.
 
 ### ifBattle
@@ -66,9 +62,9 @@ You can create a process that works only on the battle screen and the map screen
 
 In the above example, it is a skill that executes near on the battle screen and back on the map screen.
 
-## DynamicMotion: Modification for Map Template
-It is a template registered in the map template list.
-There is a template with the same name and ID for battle, but the setting for the map has priority.
+## Changes for Map Template
+Template are also registered in the map template list.
+There is a template with the same name and ID for battle scene, but the setting for the map has priority.
 Be careful not change the wrong template.
 
 ### near (Approach)
@@ -94,7 +90,7 @@ When the plug-in command is executed, it jumps back to the position where the ac
 When the plug-in command is executed, the actor returns to the original position.
 The only difference from return is the presence or absence of a jump and the difference in required time.
 
-## DynamicMotion: Additional Template for Map
+## Additional Template for Map
 
 This is a new template registered in the map template list.
 Only available on the map.
@@ -112,13 +108,11 @@ For example, if you do the above, it will turn to the target and then move forwa
 ### turnAway
 The actor faces the opposite direction of the subject.
 
-## DynamicMotion: Additional parameters for the map (Map Parameter)
+## Additional Parameters for map
 
 When Dynamic Motion is started from the map, the following parameters are newly enabled.
 
-### gridEx (Grid end point X coordinate)
-
-### gridEy (Grid end point Y coordinate)
+### gridEx, gridEy
 The X and Y coordinates of the end point (move destination).
 Unlike ex and ey, these are the coordinates in grid units.
 
@@ -180,12 +174,13 @@ You can change the character image by combining image and imageIndex like this.
 It is also possible to specify only one.
 
 ## Plugin Parameter
-### NoMultipleMotion (Prevent multiple execution)
-Prohibits duplicate execution of Dynamic Motion for events.
+### NoMultipleMotion
+Prohibits multiple execution of Dynamic Motion for events.
 This prevents unexpected behavior.
 
 ### RoundCoordinate (Rounding of destination coordinates)
 If the grid coordinates to which the event is moved are decimal, they are rounded off.
+
 *) Grid coordinates are equivalent to multiples of 48 (standard) in pixel units.
 
 It seems that the rest to the decimal coordinates is not supposed on the RPG Maker side, and problems such as not accepting operations will occur.
@@ -202,15 +197,15 @@ In the initial state, it is designed to step on when moving other than jumping.
 
 If a pattern is specified, that will be given priority.
 
-## Plugin Parameter Near
+## Plugin Parameter for Movement
 Adjusts the behavior when approaching.
-Mainly related to near (back) templates.
+Mainly related to **near** or **back** templates.
 
-### ConsiderSize (Consider the size of the target)
+### ConsiderSize
 When approaching, consider the size of the target.
 If it is off, the target size is considered as one grid.
 
-### RoundTypeNear (How to round the coordinates when approaching)
+### RoundTypeNear
 How to round the grid coordinates when approaching.
 When you move to coordinates like 10.5, you get a sense of unity in the process.
 
@@ -219,8 +214,7 @@ If this item is off, you may move to an uneven grid depending on the direction w
 This is because the coordinates of the destination will be rounded off.
 This item is a measure to eliminate those discomforts.
 
-## Differences in behavior from battle
-
+## Differences in behavior from battle scene
 Due to the specifications, the behavior is different from that in battle, so I summarized that point.
 
 ### Template behavior
@@ -230,14 +224,16 @@ If you want to create a motion with a character chip, you need to prepare and im
 
 ### References for a and b (for advanced users)
 
-During the battle, I was able to access the information of Game_Battler as a = actor, b = target, such as a.hp, b.atk.
+During the battle, we are able to access the information of Game_Battler as `a` = actor, `b` = target, such as `a.hp`, `b.atk`.
 (At least in the current version of the standard)
-But the map version behaves differently and the reference is not Game_Character. a and b are Sprite_Character.
-*) Reason: The coordinate information (x, y) of Game_Character is based on the grid coordinates.
-Because the specification difference from the battle is large.
+But the map version behaves differently and the reference is not `Game_Character`. `a` and `b` are `Sprite_Character`.
 
-If you want to access Game_Character, you can refer to "a._character" and "b._character".
-Basically, it seems that Game_Character is the center of control rather than Sprite_Character on the map, and this tends to have more useful information & functions.
+*) Reason: The coordinate information (x, y) of `Game_Character` is based on the grid coordinates.
+
+Because there are huge difference with specification from the battle scene.
+
+If you want to access `Game_Character`, you can refer to `a._character` and `b._character`.
+Basically, it seems that `Game_Character` is the center of control rather than `Sprite_Character` on the map, and this tends to have more useful information & functions.
 
 ## Update history (history)
 
@@ -251,6 +247,7 @@ Implemented gx and gy as abbreviations for gridEx and Ey .
 Fixed a bug that some weight processing is not working properly.
 Fixed a bug that characters rarely disappear when opening and closing the menu.
 Fixed NRP_DynamicAnimationMapMZ file being MV version.
+
 *) If you do not reset the plug-in command, an error may occur. Sorry to trouble you, but thank you.
 
 *) Template additions / modifications will not be reflected unless the Dynamic Motion plug-in is re-registered.

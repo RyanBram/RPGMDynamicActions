@@ -1,16 +1,17 @@
-# DynamicMotion display template [RPG Maker MZ & MV plug-in]
+# Visual Template
 
 This page is part of the description of the Dynamic Motion plug-in .
 
 I will introduce the display template.
+
 *) The ver notation is based on the MV version of Dynamic Motion, but all are also valid for Dynamic Motion MZ.
 
-### invisible
+## invisible
 
 Make the battler transparent.
 To make it clear, you need to specify "visible" below.
 
-### visible
+## visible
 
 Releases the transparent state.
 ```
@@ -26,7 +27,7 @@ ex += 48 * mirroring // 対象の少し手前に移動
 
 I tried to combine transparency and detransparency.
 
-### mirror (Invert)
+## mirror
 ```
 <D-Motion:mirror&near/> // 左右反転して対象へ接近
 <D-Animation/> // アニメーション
@@ -37,28 +38,28 @@ I tried to combine transparency and detransparency.
 It can be used for skills and items for allies.
 It can be combined with an attack, but be careful as it changes the arm that swings the weapon.
 
-In addition, it does not return until the left-right reversal is canceled. You need to specify "mirrorOff" below.
+In addition, it does not return until the left-right reversal is canceled.
+You need to specify "mirrorOff" below.
 Alternatively, as in the example, it is automatically canceled by the "return" type, so it is recommended to leave it to that.
 
-### mirrorOff
+## mirrorOff
 
 Cancels the left-right reversal of the butler.
 ```
 <D-Motion:mirror&near/> // 左右反転して対象へ接近
 <D-Motion:mirrorOff/> // 左右反転解除
 ```
-![Image](https://image.gif)
 
-### zoomA (Self zoom ver1.021)
+## zoomA
 
-Zoom to the action subject.
+Zoom to the subject.
 
-### zoomB (Target zoom ver1.021)
+## zoomB
 
 Zoom to the target.
 "The subject of action is A" and "the target is B" are the same as the skill calculation formula. It is recommended to remember it when it seems to be confused.
 
-### zoomOff (ver1.021)
+## zoomOff
 
 Resetting the zoom.
 The following is an example of combining with your own zoom and the target zoom.
@@ -78,7 +79,7 @@ The following is an example of combining with your own zoom and the target zoom.
 ![Image](https://newrpg.up.seesaa.net/image/20200329_zoomB.gif)
 
 
-### shake (ver1.03)
+## shake
 
 Vibrates the motion target. The vibration width is 6 pixels in total on the left and right.
 ```

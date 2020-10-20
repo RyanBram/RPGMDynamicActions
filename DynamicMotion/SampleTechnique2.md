@@ -1,4 +1,4 @@
-# Dynamic Animation & Motion sample technique ② [RPG Maker MZ & MV plug-in]
+# Sample Technique 2
 This page is DynamicAnimation and DynamicMotion is part of the description of the plug-in.
 
 I will introduce sample techniques.
@@ -6,7 +6,7 @@ I'm going to do something a little complicated.
 You can copy and paste it into the memo field of the skill (item).
 You can use it as it is or modify it.
 
-### Explosive legs
+## Explosive Kick
 It collides with the enemy with a rider kick-like behavior.
 
 `id=107（無属性/単体2）)` is used for the animation, but you can use it as you like.
@@ -54,13 +54,14 @@ wait = 10
 ```
 
 
-### Zoom Attack DynamicMotion ver1.02 (2020/03/29)
+## Zoom Attack
 
 While attacking, gradually zoom toward the target.
 
 *) The description has been simplified due to the template of zoom processing. (2020/03/29)
 
-![https://newrpg.up.seesaa.net/image/20200329_zoomB.gif)
+![Image](https://newrpg.up.seesaa.net/image/20200329_zoomB.gif)
+
 ```
 <D-Motion:near&zoomB/> // 対象にズーム
 <D-Motion:attack/> // 武器振り
@@ -70,14 +71,17 @@ While attacking, gradually zoom toward the target.
 If you want to zoom to the action subject, use `zoomA`.
 Note that these processes automatically track even if the zoom target is moving.
 
-### Sliding (2020/03/24)
+## Sliding
 
 Spin the enemy by sliding.
+
 ![Image](https://newrpg.up.seesaa.net/image/20200324_sliding.gif)
 
 Set the position of the animation to the skill to `foot`.
 Also, an animation for sand smoke is required separately. The example below uses the `Earth1` pattern. The position is `foot`. It is natural to set the composition method to `Normal`.
+
 ![Image](https://newrpg.up.seesaa.net/image/20200324_sliding_smoke.JPG)
+
 ```
 // 90度回転して体を地面へ
 <D-Motion:wait>
@@ -125,10 +129,11 @@ frame = 5
 <D-Motion:return/> // 戻る
 ```
 
-### Ultra Jump (revised 2020/08/30)
+## Ultra Jump
 
 Randomly tramples the enemy.
 In the example, the range is set to `Random 4 enemies`, but it works fine even if you use `Whole enemies`.
+
 ![Image](https://newrpg.up.seesaa.net/image/20200325_ultraJump.gif)
 
 Aim at the head by setting the animation set for the skill to `overhead`.
@@ -163,7 +168,7 @@ damageAll = false // ダメージ表示は個別に任せる
 By applying this, you can also create techniques such as hitting the body in order.
 Please note that timing adjustment is a little difficult. Please be careful about the deficit part.
 
-### Cross Slash (2020/03/31)
+## Cross Slash
 
 Perform a slash while passing by the target.
 The angle of the slash also changes depending on the angle with the target.
@@ -203,7 +208,7 @@ This is a standard function of JavaScript.
 
 *) It may be a little unclear, but don't worry too much as you can copy it.
 
-### Gale Sword (2020/04/03)
+## Gale Sword
 
 Cut it while passing by the target.
 Random slashing is played while changing the angle.
@@ -240,7 +245,7 @@ By randomly changing the `rotation`, we are trying to launch slashes from variou
 `Math.PI * 2` means 360 degrees, and `da.startRandom ()` is a function that takes a value between 0 and 1.
 In other words, it means 0 to 359 degrees.
 
-### Nerikiken (single) DynamicMotion ver1.021 (2020/04/06)
+## Nerikiken (single)
 
 *) Dynamic Motion ver1.021 or later is required.
 Hit while attracting the enemy.
@@ -249,6 +254,7 @@ In addition, an animation for suction is required.
 In the example, based on `102: Darkness / Single 2`, the composition method is changed to `Addition` in the batch setting.
 
 ![Image](https://newrpg.up.seesaa.net/image/20200406_renkiken1.gif)
+
 ```
 // 自身に吸引アニメを表示
 <D-Animation>
@@ -277,7 +283,7 @@ frame = 2 // 吹っ飛び時間
 `Subject` always means the actor of the skill.
 It is confusing, but if you change the motion target, `a` becomes the motion target person.
 
-### Nerikiken (all) DynamicMotion ver1.021 (2020/04/06)
+## Nerikiken (all)
 
 *) Dynamic Motion ver1.021 or later is required.
 Speaking of Nekiken, it is a whole skill in the first place. Of course I have prepared it properly.
@@ -327,7 +333,7 @@ The point is to match the values ​​of `performerDelay` and `nextDelay`. This
 It's a little confusing, but `performerDelay` is the time difference when there are multiple motion targets.
 `NextDelay` is `time difference to display animation for each target` and `time difference for action subject to execute motion for each target`.
 
-### Illussion sword (2020/04/10)
+## Illussion Sword
 
 *) Dynamic Motion ver1.03 or later is required.
 
@@ -366,13 +372,14 @@ rotation = -Math.PI/2 // 90度回転
 The position is changed momentarily every 2/60 seconds in the red part.
 `ScaleX` is a value that means the width of the butler, but if you set the value to `-1`, it will be flipped horizontally. Inversion is also possible with `mirror = true`, but if you want to change it in real time, you can use `scaleX`.
 
-### Transformation DynamicMotion ver1.04 (2020/05/10)
+## Transformation
 
 Change the image of Butler.
 It can be used for literal transformation techniques, but it can also be used for adding motion patterns.
 Also, the enemy can change the image in the same way.
 
 ![Image](https://newrpg.up.seesaa.net/image/20200510_trans.gif)
+
 ```
 // グラフィックを変更して接近
 <D-Motion:near>

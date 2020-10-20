@@ -1,4 +1,4 @@
-# DynamicAnimation & Motion sample technique (cooperation skill) [RPG Maker MV & MZ plug-in]
+# Sample Technique Cooperative Skill
 
 This page is DynamicAnimation and DynamicMotion is part of the commentary.
 
@@ -11,7 +11,7 @@ As a premise, it is assumed to be used in combination with the following plug-in
 
 Introduction of this, it will be possible to acquire actors who will participate in the union technique with the "$ actor (id)" and "$ cs (id)" functions.
 
-### X slash
+## X-Slash
 Slash the enemy so that the two actors intersect.
 
 ![Image](https://newrpg.up.seesaa.net/image/20200411_XSlash.gif)
@@ -76,7 +76,7 @@ Convenient.
 The "X-shaped animation" part is playing two "7: Slashing / Effects" at different angles.
 Of course, you can also make an X-shaped slashing animation normally.
 
-### All out attack (2020/5/2)
+## All Out Strike (2020/5/2)
 
 We will make a total attack with everyone.
 
@@ -129,7 +129,7 @@ If you do not cut it, the damage will be displayed when the first person returns
 
 I wondered if I could do something like a persona in combination with the "forced combat action" area ...
 
-### Magic Combo (updated 2020/09/07)
+## Magic Combo
 Perform magic by multiple actors.
 
 ![Image](https://newrpg.up.seesaa.net/image/20200907_bomb.gif)
@@ -165,7 +165,7 @@ nextDelay = 0 // 各人時間差
 The above is for 2 people, but you can use it as it is for 3 or 4 people just by changing the value of <CS_Actors: 2,6> at the beginning.
 After that, set the animation as you like.
 
-### Simultaneous shooting (updated May 18, 2020)
+## Simultaneous Shooting
 *) NRP_CombinationSkill ver1.302 is required.
 
 Everyone shoots all at once.

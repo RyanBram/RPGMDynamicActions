@@ -1,11 +1,11 @@
-# DynamicMotion Other functions, etc. [RPG Maker MV plug-in]
+# Other Functions
 This page is part of the description of the Dynamic Motion plug-in .
 
 It is a supplementary function explanation.
 Some features are the same as Dynamic Animation.
 
 
-## Mirroring
+## mirroring
 
 For example, if you have the following definition:
 ```
@@ -18,7 +18,7 @@ However, there is one problem.
 
 If used by an actor, it will move to the right, which is the front of the target, without any problem.
 …… But if the enemy uses this, it will move to the back of the actor this time.
-Then, I want to switch the definition to "bx + 200" for allies and "bx --200" for enemies.
+Then, I want to switch the definition to `b.x + 200` for allies and `b.x - 200` for enemies.
 Therefore, we have prepared the following functions.
 ```
 <D-Motion:near>
@@ -49,8 +49,8 @@ arcY /= 2 // テンプレートの設定値 / 2
 
 Please note that these operations are only "string concatenation" to the JavaScript expression.
 
-What this means is that the template setting is "ex = b.x + 100".
-If the input in the memo field is as follows ...
+What this means is that the template setting is `ex = b.x + 100`.
+If the input in the note tag is as follows:
 ```
 <D-Motion:jump>
 ex *= 2
@@ -62,7 +62,7 @@ In other words, only the last 100 parts are multiplied.
 To apply it to the whole, set the plug-in setting value as `ex = (b.x + 100)` and it's OK.
 There is no problem with addition and subtraction, but be careful with multiplication and division.
 
-## & symbol for combining Template
+## `&` symbol for combining Template
 
 Templates can be combined by the `&` symbol.
 For example ...
@@ -108,28 +108,31 @@ Please note that it is natural that you cannot take two motions at the same time
 
 There is no limit to the number that can be combined, and 3 or more are possible.
 
-## <D-Setting> function
+## `<D-Setting>` function
 
 You can perform the following functions by filling in the memo field.
 If you want to set multiple functions, please describe as follows.
 `<D-Setting:NoStep&Sync>`
 
-### NoStep (Auto forward disabled)
+### NoStep
 
 Eliminates one step forward when executing skills (items).
 `<D-Setting:NoStep>`
 
-### Sync (Parallel execution)
+### Sync
 
-Disables the weight and delay instructions that are initialized in the template.
+Disables the wait and delay instructions that are initialized in the template (performing parallel execution).
 It is supposed to be used when you want to perform complicated timing adjustment such as coalescence technique.
 `<D-Setting:Sync>`
 
-However, it is not always necessary to use it forcibly. If you use templates such as "noWait" and "noDelay", you can create a combination technique without using them. Please use the one that is easy to use.
+However, it is not always necessary to use it forcibly.
+If you use templates such as "noWait" and "noDelay", you can create a combination technique without using them.
+Please use the one that is easier to use.
 
-### Immortal (Immortal control ver1.04)
+### Immortal
 
 By using the immortal state, you can control the production. Set the state to be used in the plug-in parameter in advance.
 `<D-Setting:Immortal>`
 
-As a result, the death judgment will not be made until the skill production is completed. You can prevent the opponent from dying during the continuous hit technique and the production will be missed.
+As a result, the death calculation will not be made until the skill process is completed.
+You can prevent the opponent from dying during the continuous hit technique that causing the process to be missed.

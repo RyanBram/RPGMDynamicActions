@@ -1,31 +1,31 @@
-# DynamicMotion Mobile template [RPG Maker MZ & MV plug-in]
+# Movement Template
 This page is part of the description of the Dynamic Motion plug-in .
 
 I will introduce mobile templates.
 There is some overlap with the basic usage page.
 Only a brief explanation is given here, so please see the link for details.
+
 *) The version notation is based on the MV version of Dynamic Motion, but all are also valid for Dynamic Motion MZ.
 
-Table of contents
-
-### near (Approaching target)
+## near
 
 Get closer to the subject.
 Considering the size of the target and the actor, move to the adjacent position.
 In addition, the destination is automatically adjusted according to the "position (overhead, feet, etc.)" set in the animation.
 ```
-<D-Motion: near /> // Approaching the target
+<D-Motion:near/> // 対象へ接近
+
 ```
 ![Image](https://newrpg.up.seesaa.net/image/20200320_near.gif)
 
-### return
+## return
 
 It returns to the original position (home position).
 Damage processing etc. is also executed at the timing when this is executed.
 ```
-<D-Motion: near /> // Approaching the target
-<D-Animation /> // Animation
-<D-Motion: return /> // Return
+<D-Motion:near/> // 対象へ接近
+<D-Animation/> // アニメーション
+<D-Motion:return/> // 戻る
 ```
 ![Image](https://newrpg.up.seesaa.net/image/20200320_return.gif)
 
@@ -34,173 +34,176 @@ By the way, the pose at this time uses the escape motion. If you don't like it, 
 
 As I wrote in "Basic usage", the actor will return to its original position even if this is not specified. However, if the skill user is an enemy, it will not return automatically, so it is recommended to specify it properly.
 
-### crash
+## crash
 
 Similar to approaching, but this moves until it overlaps the target.
 As the name suggests, it can be used for body crushing.
 ```
-<D-Motion: crash/> // Collision with target
+<D-Motion:crash/> // 対象に衝突
 ```
 ![Image](https://newrpg.up.seesaa.net/image/20200320_crash.gif)
 
-### back
+## back
 
 Move behind the subject.
 The destination is just the opposite of "near".
 ```
-<D-Motion: back /> // Behind the target
-![Image](https://newrpg.up.seesaa.net/image/20201005_back.gif)
+<D-Motion:back/> // 対象の背後へ
 ```
+![Image](https://newrpg.up.seesaa.net/image/20201005_back.gif)
 
-### pierce
+## pierce
 
 It moves from the current location to the specified X coordinate so as to penetrate (pass) the target.
 If you do not specify the X coordinate, it will move to the edge of the screen.
 ```
-<D-Motion: pierce/> // Beyond the target
+<D-Motion:pierce/> // 対象の向こうへ
 ```
 ![Image](https://newrpg.up.seesaa.net/image/20200320_pierce.gif)
 
-As long as you specify the X coordinate, the Y coordinate will be determined automatically. Usually, it requires troublesome calculations, but it is convenient because it does it automatically.
+As long as you specify the X coordinate, the Y coordinate will be determined automatically.
+Usually, it requires troublesome calculations, but it is convenient because it does it automatically.
 ```
-<D-Motion: pierce> // Beyond the target
-ex = defaultX --100 // Move to the target X coordinate --100
-</ D-Motion />
+<D-Motion:pierce> // 対象の向こうへ
+ex = defaultX - 100 // 対象のＸ座標 - 100へ移動
+</D-Motion/>
 ```
 ![Image](https://newrpg.up.seesaa.net/image/20200320_pierce2.gif)
 
 It is also recommended to change the position once.
 ```
-<D-Motion: near /> // Approach the target
-<D-Motion: pierce> // Beyond the target
-delay = 5 // Wait 5 frames
-ex = defaultX --100 // Move to the target X coordinate --100
-< / D-Motion />
+<D-Motion:near/> // 対象へ接近
+<D-Motion:pierce> // 対象の向こうへ
+delay = 5 // 5フレーム待つ
+ex = defaultX - 100 // 対象のＸ座標 - 100へ移動
+</D-Motion/>
 ```
 ![Image](https://newrpg.up.seesaa.net/image/20200320_pierce3.gif)
 
-Note that this type is not weighted unlike other mobile templates. This is because it is supposed to play animations that pass each other. You need to use wait and delay to get the timing right.
+Note that this template is not waited unlike other movement templates.
+This is because it is supposed to play animations that pass each other.
+You need to use wait and delay to get the timing right.
 
-### stepForward
+## stepForward
 
 Take one step forward.
 ```
-<D-Motion: stepForward /> // Go one step forward
+<D-Motion:stepForward/> // 一歩前へ
 ```
 ![Image](https://newrpg.up.seesaa.net/image/20200320_stepForward.gif)
 
-### stepBack
+## stepBack
 
 Take a step back.
 ```
-<D-Motion: stepBack/> // One step back
+<D-Motion:stepBack/> // 一歩後ろへ
 ```
 ![Image](https://newrpg.up.seesaa.net/image/20200320_stepBack.gif)
 
-### home
+## home
 
 Return to home position.
 Similar to the "return" type, but this one simply moves.
 ```
-<D-Motion: near /> // Approach the target
-<D-Motion: home /> // Go home
+<D-Motion:near/> // 対象へ接近
+<D-Motion:home/> // ホームへ
 ```
 ![Image](https://newrpg.up.seesaa.net/image/20200320_home.gif)
 
-### jump
+## jump
 
 Move while drawing a parabola.
 At that time, a shadow will be displayed at your feet. (It can be erased in the settings.)
 ```
-<D-Motion: jump /> // Jump
+<D-Motion:jump/> // ジャンプ
 ```
 
 Basically, use this template in combination with others. The following is an example.
 ```
-<D-Motion: near & jump />
+<D-Motion:near&jump/>
 ```
 ![Image](https://newrpg.up.seesaa.net/image/20200320_jump.gif)
 
 ```
-<D-Motion: crash & jump />
+<D-Motion:crash&jump/>
 ```
 ![Image](https://newrpg.up.seesaa.net/image/20200320_jump2.gif)
 
 Also, the jump height can be changed with "arcY". The initial value is -100.
 ```
-<D-Motion: near & jump> // Jump
-arcY = -200 // Parabola with height 200
-</ D-Motion>
+<D-Motion:near&jump> // ジャンプ
+arcY = -200 // 高さ200の放物線
+</D-Motion>
 ```
 ![Image](https://newrpg.up.seesaa.net/image/20200320_jump3.gif)
 
 See Basic usage for details.
 
-### roll
+## roll
 
 Make one full turn forward (counterclockwise for actors, clockwise for enemies).
 ```
-<D-Motion: roll />
+<D-Motion:roll/>
 ```
 ![Image](https://newrpg.up.seesaa.net/image/20200320_roll.gif)
 
 This is also basically used in combination with others.
 In addition, the number of rotations can be changed by changing the rotation rate "rotation". This is the number of rotations until the movement is completed.
 ```
-<D-Motion: crash & jump & roll > // Collision & jump & rotation
-rotation * = 5 // 5 rotation
-frame = 10 // Move in 10 frames
-</ D-Motion>
-<D-Animation /> // Animation
-<D- Motion: return /> // Return
+<D-Motion:crash&jump&roll> // 衝突＆ジャンプ＆回転
+rotation *= 5 // ５回転
+frame= 10 // １０フレームで移動
+</D-Motion>
+<D-Animation/> // アニメーション
+<D-Motion:return/> // 戻る
 ```
 ![Image](https://newrpg.up.seesaa.net/image/20200320_roll2.gif)
 
 "* = 5" means the original value x 5.
 If you want to rotate in the reverse direction, you can make the value negative.
 
-### revolve (ver1.04)
+## revolve
 
 Performs a circumferential movement.
 Unlike the Dynamic Animation template of the same name, Butler returns to its original position.
 ```
-<D-Motion: revolve />
+<D-Motion:revolve/>
 ```
 ![Image](https://newrpg.up.seesaa.net/image/20200506_revolve.gif)
 
 By default, it makes one rotation with a radius of 100 pixels.
 You can change the radius with "radiusX" and "radiusY", and change the rotation angle with "radX" and "radY".
 ```
-<D-Motion: target & revolve > // Revolve the target
+<D-Motion:target&revolve> // 対象を公転
 frame = 20
-radiusX * = 1.5 // Radius in the X direction (150 pixels)
-radiusY * = 0.75 // Radius in the Y direction (75 pixels)
-radX * = 3 // Rotation angle in the X direction (3 rotations)
-radY * = 3 // Rotation angle in the Y direction (3 rotations)
-</ D-Motion>
-<D-Animation /> // Animation
+radiusX *= 1.5 // Ｘ方向の半径（150ピクセル）
+radiusY *= 0.75 // Ｙ方向の半径（75ピクセル）
+radX *= 3 // Ｘ方向の回転角度（３回転）
+radY *= 3 // Ｙ方向の回転角度（３回転）
+</D-Motion>
+<D-Animation/> // アニメーション
 ```
 ![Image](https://newrpg.up.seesaa.net/image/20200506_revolve2.gif)
 
 Similarly, "* = 3" means the original value x 3.
 
-Head ver1.09
+## head
 
 Move towards the subject's head.
 In RPG Maker MZ, the function to change the position of the animation to "overhead" or "foot" has disappeared. It is an alternative function.
 ```
-<D-Motion: crash & jump & head /> // Jump above the target
-<D-Animation: head /> // Animation overhead
-<D-Motion: return /> // Return
+<D-Motion:crash&jump&head/> // 対象の頭上へジャンプ
+<D-Animation:head/> // 頭上にアニメーション
+<D-Motion:return/> // 戻る
 ```
 ![Image](https://newrpg.up.seesaa.net/image/20201005_head.gif)
 
-### foot (ver1.09)
+## foot
 
 Move towards the target's feet.
 ```
-<D-Motion: near & foot /> // Approaching the target's feet
-<D-Animation: foot /> // Animation at the feet
-<D-Motion: return /> // Return
+<D-Motion:near&foot/> // 対象の足元へ接近
+<D-Animation:foot/> // 足元にアニメーション
+<D-Motion:return/> // 戻る
 ```
 ![Image](https://newrpg.up.seesaa.net/image/20201005_foot.gif)

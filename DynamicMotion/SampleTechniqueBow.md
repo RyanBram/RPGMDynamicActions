@@ -1,4 +1,4 @@
-# DynamicAnimation & Motion sample technique (bow) [RPG Maker MV plug-in]
+# Sample Technique - Bow
 This page is DynamicAnimation and DynamicMotion is part of the description of the plug-in.
 
 I will introduce the sample technique of the bow system.
@@ -6,9 +6,12 @@ I will introduce the sample technique of the bow system.
 As a premise, it is assumed that you understand the basic usage of Dynamic Animation .
 If this is not the case, it would be easier to understand if you can see only the upper part of the link (around the arrival frame).
 
-*) The sample on this page is recommended for " DynamicAnimation ver1.04 or later". In addition, the "lookCourse" type template must be added to the plugin parameters. (Reference: Template definition list )
+*) The sample on this page is recommended for " DynamicAnimation ver1.04 or later".
+In addition, the "lookCourse" type template must be added to the plugin parameters.
+(Reference: Template definition list )
 
-Arrows are not included in the standard material of Tsukuru MV, but they are included in the bow attack pattern. I extracted it so that it can be used as an animation. I also removed the arrow from the bow.
+Arrows are not included in the standard material of Tsukuru MV, but they are included in the bow attack pattern.
+I extracted it so that it can be used as an animation. I also removed the arrow from the bow.
 *) Due to the rules of the Maker series, only regular MV users can use it.
 
 Animations (img / animations)
@@ -26,15 +29,17 @@ Weapon (img / system)
 Now create an arrow animation and you're ready to go.
 Even if you say creation, the movement is controlled by a plug-in, so you can simply paste the pattern in the center of the screen.
 The size is too small in the initial state, so it may be better to enlarge it to about 150%.
+
 ![Image](https://newrpg.up.seesaa.net/image/20200328_arrow.JPG)
 
 In the example, I tried to make the 1st to 4th frames the 1st pattern and the 5th to 8th frames the 2nd pattern (the one that stabbed).
 
-### Bow attack
+## Bow Attack
 
 First, shoot an arrow normally.
 If you want to use it as a normal attack, you can link it to the weapon with the official plugin "WeaponSkill.js".
 There is a problem of what to do with enemy characters who do not have weapons.
+
 ![Image](https://newrpg.up.seesaa.net/image/20200329_arrow.gif)
 ```
 <D-Motion:attack/>
@@ -48,9 +53,10 @@ arrival = 4 // 到達フレーム
 Change the start point position and arrival frame according to your own settings.
 I also added a hit effect as appropriate, but please feel free to use that area.
 
-### Rapid fire
+## Rapid Shoot
 
-It is a rapid fire. I just shoot an arrow.
+Shoot arrows rapidly.
+
 ![Image](https://newrpg.up.seesaa.net/image/20200329_rensya.gif)
 ```
 // １０連射（モーション）
@@ -73,11 +79,12 @@ arrival = 4 // 到達フレーム
 You're just repeating the "arrow".
 If you change the value of "repeat", the number of arrows will also change. At that time, make sure that the values ​​of "repeat" and "interval" of the motion and animation match.
 
-### Arrow rain
+## Arrow Rain
 
 Shoot an arrow in the sky and attack with an arrow that falls like rain.
 The animation of the arrow is changed so that it sticks to the target in 12 frames.
 Since there is a flight time, it is more natural to make it longer.
+
 ![Image](https://newrpg.up.seesaa.net/image/20200328_arrowRain.gif)
 ```
 // 弓を引く
@@ -100,7 +107,7 @@ arcY = -500 // 放物線の高さ
 ```
 "EyRandom = 130" is to narrow the random width of the end point Y coordinate than the standard. At the standard value, it felt a bit strange because it stuck in the space above the background.
 
-### Wind dirt
+## Wind Dirt
 
 Fires wind arrows in rapid succession.
 The orbit takes a parabola of random height.
@@ -113,6 +120,7 @@ It is assumed that the target will be reached in 8 frames.
 It doesn't matter if it's a ball of fire, not just an arrow of the wind.
 
 ![Image](https://newrpg.up.seesaa.net/image/20200326_windDart_animation.JPG)
+
 ```
 // 弓を引く
 <D-Motion:attack>
@@ -140,10 +148,12 @@ arcY = -150 + Math.random() * 300 // -150～150
 - This randomizes the height of the parabola.
 - "Math.random ()" is a function that generates a random value from 0 to 1.
 
-### Thousand needles (2020/4/9)
+## Thousand Needles
 
 A large number of arrows appearing from around the enemy will pierce you.
+
 ![Image](https://newrpg.up.seesaa.net/image/20200409_harisen.gif)
+
 ```
 // 連射（モーション）
 <D-Motion:attack>

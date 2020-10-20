@@ -1,12 +1,13 @@
-# DynamicAnimation & Motion sample technique (magic) [RPG Maker MV plug-in]
+# Sample Technique - Magic
 This page is DynamicAnimation and DynamicMotion is part of the description of the plug-in.
 
 I will introduce some magical sample techniques.
 
-### Summon (updated on 2020/09/08)
+## Summon
 
 *) Screen type template required. (Added in Dynamic Animation ver1.06)
 Deletes the actor and displays the whole animation.
+
 ![Image](https://newrpg.up.seesaa.net/image/20200420_summon.gif)
 
 ```
@@ -26,11 +27,12 @@ performer = a.friendsUnit().members()
 By "performer = a.friendsUnit (). members ()", the whole actor is targeted.
 *) It is also valid for "$ gameParty.members ()", but if it is "a.friendsUnit (). members ()", it will work even if the user is an enemy.
 
-### Vortex of Flame DynamicMotion ver1.04 (2020/05/09)
+## Vortex of Flame
 
 Causes a flame that wraps around the subject.
 The display priority change function that is possible with DynamicMotion ver1.04 (DynamicAnimation ver1.07) or later is used.
 The animation is "67: Flame / Single 2", but please change it to your liking.
+
 ![Image](https://newrpg.up.seesaa.net/image/20200509_fireVortex.gif)
 
 ```
@@ -54,12 +56,13 @@ z = this.y < b.y ? b.z - 1 : this.z // Ｚ座標
 　※『z = b.z』でよさそうな気がしますが、なぜかアニメーションの一部描画が止まるバグが発生しました。解決できそうにないのでこれを使ってください。
 
 
-### Whirlpool DynamicMotion ver1.04 (2020/05/12)
+## Whirlpool
 
 Rotate the enemy around the center of the enemy team.
 We already have a sample of a simple circumferential motion, but this one is for general attacks.
 The skill animation just repeats the "Darkness2" pattern.
 The position is "screen".
+
 ![Image](https://newrpg.up.seesaa.net/image/20200512_whirlpool.gif)
 
 ```
@@ -87,13 +90,15 @@ The most esoteric is the formula for "dx, dy" ... This is a formula in which the
 Since sin changes the value from 0-> 1-> 0 every 90 degrees, we use that property to move back and forth.
 The whole operation is realized by adding the rotation component to this formula.
 
-### Psychokinesis (May 25, 2020)
+## Psychokinesis
 
 Rocks that appeared at random positions are moved to random positions. Hit the target from there.
 A keep type template is used to hold a random position.
 
 In addition, the definition of the continuation type update on 2020/05/09 Since it has, there is a possibility that does not work and does not reflect.
+
 ![Image](https://newrpg.up.seesaa.net/image/20200525_psychokinesis.gif)
+
 ```
 // 術者前方にランダムで砂煙
 <D-Animation>
@@ -124,9 +129,9 @@ arrival = 5
 </D-Animation>
 ```
 
-The keep type has the effect of copying the end point coordinates of the previous <D-Animation> to the start point.
+The keep type has the effect of copying the end point coordinates of the previous `<D-Animation>`` to the start point.
 In addition, information such as the number of repetitions is automatically inherited.
-The point is to join to the back side with &, like <D-Animation: shotRandom & keep>.
+The point is to join to the back side with &, like `<D-Animation: shotRandom & keep>``.
 This is because shotRandom itself has the information.
 In this case, the setting of the template on the back side has priority.
 
